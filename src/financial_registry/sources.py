@@ -25,9 +25,12 @@ class ConnectorRunResult:
     source_run: SourceRun
     warnings: list[str]
     conflicts: tuple[ConflictEvidence, ...] = ()
+    candidates: tuple[CandidateRecord, ...] = ()
 
     @classmethod
-    def succeeded(cls, connector, snapshot, candidate_count, now):
+    def succeeded(cls, connector, snapshot, candidate_count, now, *, candidates=None):
+        candidate_values = tuple(candidates) if candidates is not None else ()
+        count = len(candidate_values) if candidates is not None else candidate_count
         run = SourceRun(
             id=f"{connector.definition.id}:{snapshot.sha256}",
             source_id=connector.definition.id,
@@ -36,9 +39,9 @@ class ConnectorRunResult:
             status=SourceRunStatus.SUCCEEDED,
             snapshot_path=snapshot.path,
             snapshot_sha256=snapshot.sha256,
-            candidate_count=candidate_count,
+            candidate_count=count,
         )
-        return cls(SourceRunStatus.SUCCEEDED, candidate_count, snapshot, run, [])
+        return cls(SourceRunStatus.SUCCEEDED, count, snapshot, run, [], candidates=candidate_values)
 
     @classmethod
     def failed(cls, connector, previous_snapshot, warning, now, previous_run_id=None):
@@ -78,6 +81,12 @@ def run_connector(connector, previous_snapshot, now, previous_run_id=None):
     try:
         snapshot = connector.fetch()
         candidates = connector.normalize(snapshot)
-        return ConnectorRunResult.succeeded(connector, snapshot, len(candidates), now)
+        return ConnectorRunResult.succeeded(
+            connector,
+            snapshot,
+            len(candidates),
+            now,
+            candidates=candidates,
+        )
     except Exception as exc:
         return ConnectorRunResult.failed(connector, previous_snapshot, str(exc), now, previous_run_id)

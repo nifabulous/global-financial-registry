@@ -52,3 +52,14 @@ def test_failed_run_retains_previous_verified_snapshot(flaky_connector):
     assert second.source_run.previous_snapshot_sha256 == first.snapshot.sha256
     assert second.source_run.previous_run_id == first.source_run.id
     assert second.warnings
+
+
+def test_successful_run_retains_normalized_candidates(flaky_connector):
+    result = run_connector(
+        flaky_connector,
+        previous_snapshot=None,
+        now=datetime(2026, 8, 26, tzinfo=timezone.utc),
+    )
+
+    assert len(result.candidates) == 1
+    assert result.candidates[0].legal_name == "Demo Bank"

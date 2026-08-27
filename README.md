@@ -28,6 +28,9 @@ financial-registry release-build data/fixtures/candidates.json dist/release \
   --version 0.1.0 \
   --generated-at 2026-08-26T00:00:00+00:00 \
   --generation-commit fixture-commit
+financial-registry source-pilot data/registry.json \
+  --snapshot-dir data/snapshots --max-records 1000 \
+  --generated-at 2026-08-27T00:00:00+00:00
 financial-registry logo-discover data/fixtures/candidates.json dist/logo-candidates.json
 financial-registry wikidata-suggest data/fixtures/candidates.json dist/wikidata-suggestions.json
 financial-registry wikidata-logo-discover data/registry.json data/wikidata-mappings.json dist/wikidata-logo-candidates.json
@@ -111,6 +114,27 @@ registry = report.registry
 ```
 
 The first live pilot is intentionally not a global coverage release: it combines a bounded FDIC sample, its matching GLEIF records, and the current ECB workbook. It creates a valid metadata release, but it contains no logo binaries until the logo rights workflow is completed.
+
+### Bounded source pilot
+
+`source-pilot` is the reproducible entry point for a first real-data run. It
+fetches the GLEIF LEI API, FDIC BankFind, and the ECB supervised-entities
+workbook, storing each raw response in a content-addressed snapshot directory.
+The default limit is 1,000 records per source; increase it only as an explicit
+capacity and source-usage decision. The output is a `RegistryInput` JSON file
+with normalized institutions, source definitions, successful/failed source
+runs, snapshot digests, and merge provenance. Failed sources do not discard
+successful sources; they are recorded as warnings in the output.
+
+```bash
+financial-registry source-pilot data/registry.json \
+  --snapshot-dir data/snapshots \
+  --max-records 1000 \
+  --generated-at 2026-08-27T00:00:00+00:00
+```
+
+Keep `data/snapshots/` outside published release bundles. The generated
+registry is still a bounded pilot, not a claim of complete global coverage.
 
 ## Logo discovery and rights review
 

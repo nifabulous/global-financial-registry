@@ -1,16 +1,19 @@
 import json
 from dataclasses import asdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import httpx
 import typer
 from pydantic import ValidationError
 
+from .connectors import ECBConnector, FDICConnector, GLEIFConnector
 from .domain import RegistryInput
 from .logo_discovery import OfficialDomainLogoDiscovery
 from .logo_sources import WikidataCommonsLogoConnector
+from .pilot import run_registry_pilot
 from .release import ReleaseBuilder, ReleaseValidationError
+from .snapshots import FilesystemSnapshotStore
 from .wikidata_mapping import load_reviewed_wikidata_mappings
 from .wikidata_matching import WikidataEntityMatcher
 
@@ -43,6 +46,26 @@ def _load(path: str) -> RegistryInput:
         resolved = (input_path.parent / registry.asset_root).resolve()
         registry = registry.model_copy(update={"asset_root": str(resolved)})
     return registry
+
+
+def _registry_payload(registry: RegistryInput, output: Path) -> dict:
+    """Serialize a registry while keeping colocated snapshots portable."""
+
+    payload = registry.model_dump(mode="json")
+    output_parent = output.resolve().parent
+    for source_run in payload.get("source_runs", []):
+        snapshot_path = source_run.get("snapshot_path")
+        if not snapshot_path:
+            continue
+        try:
+            snapshot = Path(snapshot_path)
+            if not snapshot.is_absolute():
+                snapshot = output_parent / snapshot
+            source_run["snapshot_path"] = str(snapshot.resolve().relative_to(output_parent))
+        except ValueError:
+            # A caller may intentionally keep snapshots outside the registry's directory.
+            continue
+    return payload
 
 
 @app.command("validate")
@@ -106,6 +129,52 @@ def release_build(
         typer.echo(f"error[release_invalid] {exc}", err=True)
         raise typer.Exit(code=1) from exc
     typer.echo(f"release {manifest.release_version}: {output_dir}")
+
+
+@app.command("source-pilot")
+def source_pilot(
+    output_path: str = typer.Argument(...),
+    snapshot_dir: str = typer.Option("data/snapshots", "--snapshot-dir"),
+    max_records: int = typer.Option(1_000, "--max-records", min=1, max=10_000),
+    generated_at: str | None = typer.Option(None, "--generated-at"),
+) -> None:
+    """Fetch bounded GLEIF, FDIC, and ECB data and write a merged registry."""
+
+    try:
+        run_at = datetime.fromisoformat(generated_at) if generated_at else datetime.now(timezone.utc)
+        snapshot_store = FilesystemSnapshotStore(snapshot_dir)
+        connectors = (
+            GLEIFConnector(
+                snapshot_store,
+                max_records=max_records,
+                filters={"entity.status": "ACTIVE"},
+            ),
+            FDICConnector(snapshot_store, max_records=max_records),
+            ECBConnector(snapshot_store, max_records=max_records),
+        )
+        result = run_registry_pilot(connectors, now=run_at)
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            json.dumps(
+                _registry_payload(result.registry, output),
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    except (json.JSONDecodeError, ValidationError, ValueError) as exc:
+        typer.echo(f"error[pilot_invalid] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except OSError as exc:
+        typer.echo(f"error[pilot_io] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    typer.echo(
+        f"source pilot: {len(result.registry.institutions)} institutions, "
+        f"{result.report.candidate_count} candidates, {len(result.warnings)} warnings -> {output_path}"
+    )
 
 
 @app.command("logo-discover")
