@@ -250,19 +250,24 @@ Simple Icons release (`data/logo-brand-records.json`,
 `data/logo-candidates-simple-icons-brand-expansion.json`), 18 additional
 institution assets discovered from official HTML declarations
 (`data/logo-candidates-official-html-expansion.json`,
-`data/logo-candidates-official-html-logo-expansion.json`), and 81 Indian and
+`data/logo-candidates-official-html-logo-expansion.json`), 81 Indian and
 international bank marks from the reviewed
 [`auraveni/global-bank-logos`](https://github.com/auraveni/global-bank-logos)
 queue (`data/logo-brand-records-auraveni-global-bank-logos.json`,
-`data/logo-candidates-auraveni-global-bank-logos.json`). The derived registry
-currently contains 135 binary assets (118 SVG, 15 PNG, and 2 JPEG), all
-explicitly reviewed as `nominative_use`, not as open-licensed artwork. Source
-versions, source URLs, and upstream legal notices are retained with each asset;
+`data/logo-candidates-auraveni-global-bank-logos.json`), and 191 Chinese and
+international bank brands with standard and rectangular variants from the
+reviewed [`icongo/bank-logos`](https://github.com/icongo/bank-logos) queue
+(`data/logo-brand-records-icongo-bank-logos.json`,
+`data/logo-candidates-icongo-bank-logos.json`). The derived registry currently
+contains 521 binary assets (504 SVG, 15 PNG, and 2 JPEG), all explicitly
+reviewed as `nominative_use`, not as open-licensed artwork. Source versions,
+source URLs, and upstream legal notices are retained with each asset;
 the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
 is retained alongside the pinned Simple Icons assets;
-the Auraveni MIT licence is treated as applying to repository code, not to the
-bank artwork or trademarks. Downstream use is limited to identifying the
-corresponding institution or brand without implying endorsement or affiliation.
+the Auraveni and ICongo MIT licences are treated as applying to repository code
+and packaging, not to the bank artwork or trademarks. Downstream use is limited
+to identifying the corresponding institution or brand without implying
+endorsement or affiliation.
 The derived registry and staged binaries are in
 `data/registry-with-logos.json` and `data/assets/logos/`.
 
