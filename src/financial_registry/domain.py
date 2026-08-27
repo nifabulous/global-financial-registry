@@ -73,6 +73,10 @@ class AssetFormat(str, Enum):
 
 class FinancialCategory(str, Enum):
     COMMERCIAL_BANK = "commercial_bank"
+    SAVINGS_BANK = "savings_bank"
+    SAVINGS_ASSOCIATION = "savings_association"
+    FOREIGN_BRANCH = "foreign_branch"
+    FINANCIAL_HOLDING_COMPANY = "financial_holding_company"
     CENTRAL_BANK = "central_bank"
     INVESTMENT_BANK = "investment_bank"
     MERCHANT_BANK = "merchant_bank"
@@ -327,14 +331,26 @@ class AssetCandidate(BaseModel):
     source_id: str
     source_uri: str
     rights_status: RightsStatus
+    review_status: ReviewStatus = ReviewStatus.CANDIDATE
+    discovery_method: str | None = None
+    confidence: float = Field(ge=0, le=1, default=0)
+    rights_note: str | None = None
     staging_path: str | None = None
     license_name: str | None = None
     license_url: str | None = None
     permission_reference: str | None = None
+    attribution_text: str | None = None
     territories: list[str] = Field(default_factory=list)
     expires_at: datetime | None = None
+    reviewed_by: str | None = None
+    reviewed_at: datetime | None = None
 
-    @field_validator("expires_at")
+    @field_validator("territories")
+    @classmethod
+    def validate_territories(cls, values):
+        return [_validate_alpha2(value) for value in values]
+
+    @field_validator("expires_at", "reviewed_at")
     @classmethod
     def validate_timestamp(cls, value):
         return _validate_utc_datetime(value) if value is not None else value

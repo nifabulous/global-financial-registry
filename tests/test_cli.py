@@ -47,3 +47,14 @@ def test_release_build_failure_leaves_no_partial_output(tmp_path):
     )
     assert result.exit_code == 1
     assert not output.exists()
+
+
+def test_logo_discover_writes_review_queue(tmp_path):
+    output = tmp_path / "logo-candidates.json"
+    result = CliRunner().invoke(app, ["logo-discover", "data/fixtures/candidates.json", str(output)])
+
+    assert result.exit_code == 0
+    assert "6 candidates" in result.stdout
+    payload = output.read_text(encoding="utf-8")
+    assert '"rights_status":"source_link_only"' in payload
+    assert '"review_status":"candidate"' in payload

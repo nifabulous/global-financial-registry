@@ -6,6 +6,7 @@ import typer
 from pydantic import ValidationError
 
 from .domain import RegistryInput
+from .logo_discovery import OfficialDomainLogoDiscovery
 from .release import ReleaseBuilder, ReleaseValidationError
 
 app = typer.Typer(no_args_is_help=True)
@@ -100,6 +101,35 @@ def release_build(
         typer.echo(f"error[release_invalid] {exc}", err=True)
         raise typer.Exit(code=1) from exc
     typer.echo(f"release {manifest.release_version}: {output_dir}")
+
+
+@app.command("logo-discover")
+def logo_discover(
+    input_path: str = typer.Argument(...),
+    output_path: str = typer.Argument(...),
+) -> None:
+    """Write a deterministic, source-link-only logo review queue."""
+
+    try:
+        registry = _load(input_path)
+        candidates = OfficialDomainLogoDiscovery().discover(registry.institutions)
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        payload = [candidate.model_dump(mode="json") for candidate in candidates]
+        output.write_text(
+            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+        )
+    except FileNotFoundError as exc:
+        typer.echo(f"error[input_not_found] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except (json.JSONDecodeError, ValidationError, ValueError) as exc:
+        typer.echo(f"error[input_invalid] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except OSError as exc:
+        typer.echo(f"error[output_io] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    typer.echo(f"logo discovery: {len(candidates)} candidates -> {output_path}")
 
 
 def main() -> None:
