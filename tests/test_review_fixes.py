@@ -267,7 +267,7 @@ def test_asset_policy_helpers_cover_malformed_and_unsupported_inputs():
     compute_imagehash(b'<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect/></svg>')
     assert compute_imagehash(b"<svg>") is None
     assert compute_imagehash(b"not-an-image") is None
-    with pytest.raises(AssetPolicyError, match="unsupported"):
+    with pytest.raises(AssetPolicyError, match="invalid raster"):
         AssetProcessor()._sanitize_and_normalize(
             FetchedAsset("https://example.test/a.jpg", "https://example.test/a.jpg", b"x", "image/jpeg")
         )

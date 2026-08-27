@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import io
 from datetime import datetime, timezone
 
 import pytest
+from PIL import Image
 
 from financial_registry.assets import AssetProcessor
 from financial_registry.domain import (
     AssetCandidate,
+    AssetFormat,
     Institution,
     RegistryInput,
     RightsStatus,
@@ -160,6 +163,28 @@ def test_promote_nominative_use_candidate_fetches_and_stages_binary(tmp_path):
     assert asset.rights_note == "Upstream nominative-use policy; identification only, no endorsement."
     assert asset.binary_path == "assets/asset_logo_candidate.svg"
     assert (tmp_path / asset.staging_path).exists()
+
+
+def test_promote_jpeg_candidate_stages_jpg_binary(tmp_path):
+    encoded = io.BytesIO()
+    Image.new("RGB", (4, 4), (49, 87, 213)).save(encoded, format="JPEG")
+    candidate = _candidate().model_copy(update={"source_uri": "https://example.test/logo.jpeg"})
+    registry = _registry(tmp_path)
+
+    result = promote_reviewed_logos(
+        registry,
+        [candidate],
+        [_decision()],
+        fetcher=FakeFetcher(encoded.getvalue(), content_type="image/jpeg"),
+        processor=AssetProcessor(url_validator=lambda url: url),
+        clock=lambda: NOW,
+    )
+
+    asset = result.registry.assets[0]
+    assert asset.format is AssetFormat.JPEG
+    assert asset.binary_path == "assets/asset_logo_candidate.jpg"
+    assert asset.staging_path == "logos/asset_logo_candidate.jpg"
+    assert Image.open(tmp_path / asset.staging_path).format == "JPEG"
 
 
 def test_promote_rejects_decisions_for_unknown_candidates(tmp_path):

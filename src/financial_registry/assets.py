@@ -146,7 +146,7 @@ class AssetProcessor:
         content_type = fetched.content_type.lower()
         if content_type == "image/svg+xml" or body.lstrip().startswith(b"<"):
             return self._sanitize_svg(body)
-        elif content_type in {"image/png", "image/webp"}:
+        elif content_type in {"image/png", "image/webp", "image/jpeg"}:
             return self._sanitize_raster(body, content_type)
         else:
             raise AssetPolicyError("unsupported content type for sanitization")
@@ -294,8 +294,13 @@ class AssetProcessor:
         # sanitized representation rather than the untrusted input bytes.
         normalized = io.BytesIO()
         try:
-            if content_type.lower() == "image/webp":
+            normalized_content_type = content_type.lower()
+            if normalized_content_type == "image/webp":
                 image.save(normalized, format="WEBP", lossless=True, method=6)
+            elif normalized_content_type == "image/jpeg":
+                if image.mode not in {"1", "L", "RGB"}:
+                    image = image.convert("RGB")
+                image.save(normalized, format="JPEG", optimize=False, progressive=False, quality=95)
             else:
                 image.save(normalized, format="PNG", optimize=False, compress_level=9)
         except Exception as exc:

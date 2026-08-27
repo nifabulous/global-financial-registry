@@ -102,7 +102,7 @@ class SafeHttpxAssetFetcher:
         self.allowed_content_types = frozenset(
             allowed_content_types
             if allowed_content_types is not None
-            else {"image/svg+xml", "image/png", "image/webp"}
+            else {"image/svg+xml", "image/png", "image/webp", "image/jpeg"}
         )
 
     def fetch(self, url: str) -> FetchedAsset:

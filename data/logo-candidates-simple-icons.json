@@ -106,5 +106,29 @@
     "discovery_method": "simple_icons_curated_mapping",
     "confidence": 0.95,
     "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_20f23e54c82d5633ad1f21df5dce6532",
+    "owner_id": "inst_76dee690fd975834809e3da048de2e40",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/revolut.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_58a1e9f53311508792d72bac6ce881c9",
+    "owner_id": "inst_a4bcf2452e2d5e61b5269b19576f0301",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/wise.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
   }
 ]

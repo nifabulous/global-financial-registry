@@ -70,6 +70,7 @@ class AssetFormat(str, Enum):
     SVG = "svg"
     PNG = "png"
     WEBP = "webp"
+    JPEG = "jpg"
 
 
 class FinancialCategory(str, Enum):

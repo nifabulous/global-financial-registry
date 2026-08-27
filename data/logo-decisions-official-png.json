@@ -1,0 +1,40 @@
+{
+  "decisions": [
+    {
+      "candidate_id": "asset_780c90cb4fa75cdfbf40c198ef35fb52",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-site app icon source; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied. Source page: https://www.bankofamerica.com/.",
+      "attribution_text": "Institution-provided app icon; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_c5320b7bc6cd5d67a4dfa4757c03990c",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-site app icon source; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied. Source page: https://www.jpmorganchase.com/.",
+      "attribution_text": "Institution-provided app icon; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_0d4f0001d6a05b97b6ba699a9cc84401",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-site app icon source; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied. Source page: https://www.wellsfargo.com/.",
+      "attribution_text": "Institution-provided app icon; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_3cb89d0bd19b575b83dd79ab28f45919",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-site app icon source; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied. Source page: https://www.capitalone.com/.",
+      "attribution_text": "Institution-provided app icon; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    }
+  ]
+}

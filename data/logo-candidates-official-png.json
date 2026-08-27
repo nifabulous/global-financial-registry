@@ -1,0 +1,50 @@
+[
+  {
+    "id": "asset_780c90cb4fa75cdfbf40c198ef35fb52",
+    "owner_id": "inst_096a406e4d1155b0b6b73ff8ea1e046b",
+    "variant": "mark",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.bankofamerica.com/homepage/spa-assets/images/assets-images-global-favicon-apple-touch-icon-CSX889b28c.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.8,
+    "rights_note": "Advertised by the institution's official website as an app icon. Candidate is retained for nominative identification only; no endorsement or affiliation implied."
+  },
+  {
+    "id": "asset_c5320b7bc6cd5d67a4dfa4757c03990c",
+    "owner_id": "inst_12f65249faca5cfdaca407f79dbc0073",
+    "variant": "mark",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.jpmorganchase.com/etc.clientlibs/cws/clientlibs/clientlib-base/resources/jpmc/images/jpmc-favicon-152.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.8,
+    "rights_note": "Advertised by the institution's official website as an app icon. Candidate is retained for nominative identification only; no endorsement or affiliation implied."
+  },
+  {
+    "id": "asset_0d4f0001d6a05b97b6ba699a9cc84401",
+    "owner_id": "inst_dbb07f8431145ebab7775cd5381d783e",
+    "variant": "mark",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www17.wellsfargomedia.com/assets/images/icons/apple-touch-icon_180x180.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.8,
+    "rights_note": "Advertised by the institution's official website as an app icon hosted on its media domain. Candidate is retained for nominative identification only; no endorsement or affiliation implied."
+  },
+  {
+    "id": "asset_3cb89d0bd19b575b83dd79ab28f45919",
+    "owner_id": "inst_80d86da949995d058b6abf8231b7623b",
+    "variant": "mark",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.capitalone.com/assets/shell/apple-touch-icon.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.8,
+    "rights_note": "Advertised by the institution's official website as an app icon. Candidate is retained for nominative identification only; no endorsement or affiliation implied."
+  }
+]

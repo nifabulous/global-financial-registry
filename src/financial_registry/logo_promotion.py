@@ -275,12 +275,19 @@ def _format_from_content_type(content_type: str) -> AssetFormat | None:
         "image/svg+xml": AssetFormat.SVG,
         "image/png": AssetFormat.PNG,
         "image/webp": AssetFormat.WEBP,
+        "image/jpeg": AssetFormat.JPEG,
     }.get(content_type.casefold().split(";", 1)[0].strip())
 
 
 def _format_from_uri(source_uri: str) -> AssetFormat | None:
     suffix = Path(urlsplit(source_uri).path).suffix.casefold()
-    return {".svg": AssetFormat.SVG, ".png": AssetFormat.PNG, ".webp": AssetFormat.WEBP}.get(suffix)
+    return {
+        ".svg": AssetFormat.SVG,
+        ".png": AssetFormat.PNG,
+        ".webp": AssetFormat.WEBP,
+        ".jpg": AssetFormat.JPEG,
+        ".jpeg": AssetFormat.JPEG,
+    }.get(suffix)
 
 
 def _validate_asset_id(asset_id: str) -> None:

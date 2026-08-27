@@ -63,6 +63,28 @@ def test_fetcher_rejects_ambiguous_content_type():
         fetcher.fetch("https://public.test/logo.svg")
 
 
+def test_fetcher_accepts_jpeg_content_type():
+    fetcher = SafeHttpxAssetFetcher(
+        client=httpx.Client(
+            transport=httpx.MockTransport(
+                lambda _request: httpx.Response(
+                    200,
+                    headers={"content-type": "image/jpeg"},
+                    content=b"jpeg",
+                )
+            )
+        ),
+        resolver=lambda host: ["8.8.8.8"],
+    )
+
+    try:
+        fetched = fetcher.fetch("https://public.test/logo.jpg")
+    finally:
+        fetcher.client.close()
+
+    assert fetched.content_type == "image/jpeg"
+
+
 def test_html_fetcher_pins_dns_and_returns_decoded_html():
     requests = []
 

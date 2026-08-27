@@ -1,4 +1,7 @@
+import io
+
 import pytest
+from PIL import Image
 
 from financial_registry.assets import AssetProcessor, FetchedAsset
 from financial_registry.domain import AssetCandidate, RightsStatus
@@ -55,6 +58,26 @@ def test_nominative_use_asset_has_public_binary_with_policy_note():
     result = AssetProcessor(url_validator=lambda url: url).process(candidate, FakeFetcher(body))
 
     assert result.public_binary is not None
+
+
+def test_jpeg_asset_is_sanitized_and_remains_jpeg():
+    encoded = io.BytesIO()
+    Image.new("RGB", (4, 4), (49, 87, 213)).save(encoded, format="JPEG")
+    candidate = AssetCandidate(
+        owner_id="brand_demo",
+        variant="primary",
+        source_id="src_demo",
+        source_uri="https://example.test/logo.jpg",
+        rights_status=RightsStatus.REDISTRIBUTABLE,
+    )
+
+    result = AssetProcessor(url_validator=lambda url: url).process(
+        candidate,
+        FakeFetcher(encoded.getvalue(), content_type="image/jpeg"),
+    )
+
+    assert result.public_binary is not None
+    assert Image.open(io.BytesIO(result.public_binary)).format == "JPEG"
 
 
 def test_svg_external_reference_is_rejected():

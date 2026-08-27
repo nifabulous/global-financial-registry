@@ -50,6 +50,7 @@ financial-registry wikidata-logo-discover data/registry.json data/wikidata-mappi
 - **Lifecycle:** `draft -> validated -> published -> superseded` and `published -> withdrawn` with predecessor/successor/withdrawal metadata. Only a validated bundle may be published.
 - **Coverage disclaimer:** This fixture-only core makes no global coverage claim and publishes counts, unresolved matches, stale sources, and provenance gaps in `schema-version.json`. Raw snapshots are stored outside public releases.
 - **Licensing:** Code is Apache-2.0; project-created normalized metadata is CC BY 4.0 (attribution required); third-party assets retain per-asset rights terms.
+- **Asset formats:** SVG, PNG, WEBP, and JPEG inputs are accepted. JPEG and `.jpeg` inputs are normalized to `.jpg` output paths after metadata stripping and dimension checks.
 - **Deferred:** Schedulers, metrics, object storage, API/CDN, public catalog, governance UI, SDK packages, and billing belong to later plans.
 
 ## Testing
@@ -217,10 +218,13 @@ warnings. The command fails closed on unknown candidate IDs, duplicate decisions
 missing registry provenance, unsupported formats, and insufficient rights evidence.
 
 The checked-in logo pilot (`data/logo-candidates-simple-icons.json` and
-`data/logo-decisions.json`) promotes nine pinned Simple Icons v16.21.0 SVGs for
-Bank of America, Chase, Wells Fargo, Deutsche Bank, Commerzbank, CaixaBank,
-HSBC, Barclays, and Goldman Sachs. They are published as `nominative_use`, not
-as open-licensed artwork: the source version and [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+`data/logo-decisions.json`) promotes eleven pinned Simple Icons v16.21.0 SVGs
+for Bank of America, Chase, Wells Fargo, Deutsche Bank, Commerzbank, CaixaBank,
+HSBC, Barclays, Goldman Sachs, Revolut, and Wise. A second queue
+(`data/logo-candidates-official-png.json`) adds four official-site PNG app marks
+for Bank of America, JPMorgan Chase, Wells Fargo, and Capital One. They are
+published as `nominative_use`, not as open-licensed artwork: source versions,
+source URLs, and the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
 are retained with each asset, and downstream use is limited to identifying the
 corresponding institution without implying endorsement or affiliation. The
 derived registry and staged binaries are in `data/registry-with-logos.json` and

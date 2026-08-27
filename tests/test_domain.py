@@ -3,10 +3,15 @@ from pydantic import ValidationError
 
 from financial_registry.domain import (
     Asset,
+    AssetFormat,
     Institution,
     ReviewStatus,
     RightsStatus,
 )
+
+
+def test_jpeg_asset_format_uses_jpg_extension():
+    assert AssetFormat.JPEG.value == "jpg"
 
 
 def test_institution_requires_two_letter_country_code():
