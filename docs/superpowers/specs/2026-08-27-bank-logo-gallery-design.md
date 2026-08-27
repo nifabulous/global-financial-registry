@@ -13,7 +13,7 @@ The page will load the existing `data/registry-with-logos.json` at runtime, join
 
 1. Make every committed logo asset visually inspectable in a browser.
 2. Preserve the registry as the single source of truth for names, ownership, provenance, format, and rights metadata.
-3. Make it obvious that the current registry contains 3,023 entities but only 54 logo assets belonging to 46 unique entities; the page must not imply that every institution has a logo.
+3. Make it obvious that the registry contains thousands of entities but only a subset with logo assets; the page must not imply that every institution has a logo. All counts must be derived from the loaded registry because enrichment is ongoing.
 4. Support quick visual triage through search and lightweight filters.
 5. Keep the first version easy to run and maintain with no frontend framework, bundler, backend, CDN, or third-party runtime dependency.
 6. Present rights and provenance accurately without granting or implying an open licence.
@@ -143,7 +143,7 @@ This addendum folds the second design review into the implementation source of t
 
 ### What already exists
 
-- `data/registry-with-logos.json` is the maintained source for 2,998 institutions, 25 brands, and 54 reviewed assets.
+- `data/registry-with-logos.json` is the maintained source for the institution, brand, and reviewed-asset counts at the time the page is opened; enrichment is ongoing, so the gallery must derive counts rather than hardcode them.
 - `data/assets/logos` contains the local SVG, PNG, and JPEG binaries referenced by the registry.
 - The Python package already validates asset paths, formats, hashes, and rights states. The gallery must consume that output and must not reimplement those rules.
 - `README.md` documents the registry and rights model but has no gallery instructions yet; the implementation will add the local server command there.
@@ -253,7 +253,7 @@ Rights values are rendered as human-readable labels such as `Nominative use` or 
 
 - Hosted deployment, custom domain, GitHub Pages, or a public API. These require a separate review of caching, URL stability, and legal presentation.
 - User-submitted corrections, asset approval, download buttons, or bulk export. The gallery is read-only and must not bypass the curated promotion workflow.
-- A full institution directory with 2,977 logo-less rows. The page reports the missing-logo count and renders only actual assets to keep the inspection task focused.
+- A full institution directory with one empty row per logo-less entity. The page reports the missing-logo count and renders only actual assets to keep the inspection task focused.
 - A full visual design system or brand identity exercise. The local tokens are enough for this tool; a broader system should be a separate product-design task.
 
 ## Implementation tasks
@@ -280,7 +280,7 @@ Synthesized from the design review. Each task is directly traceable to a review 
   - Surfaced by: Responsive and accessibility pass.
   - Files: `web/index.html`, `web/app.js`, `web/styles.css`, `tests/test_gallery.py`.
   - Verify: keyboard-only pass at desktop and mobile widths plus an automated structural accessibility assertion set.
-- [ ] **T6 (P2, human: ~45min / CC: ~5min)** — Documentation and regression checks — document local serving and the 54-asset/46-owner scope, and preserve the existing registry validation, lint, and test commands.
+- [ ] **T6 (P2, human: ~45min / CC: ~5min)** — Documentation and regression checks — document local serving and the current derived coverage scope, and preserve the existing registry validation, lint, and test commands.
   - Surfaced by: Existing-leverage and verification review.
   - Files: `README.md`, `tests/test_gallery.py`.
   - Verify: `pytest -q`, `ruff check src tests`, registry validation, and a local `python3 -m http.server 8000` smoke test.
