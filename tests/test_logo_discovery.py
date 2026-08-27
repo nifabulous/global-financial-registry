@@ -64,6 +64,80 @@ def test_discovery_is_stable_for_multiple_institutions_and_skips_missing_domains
     assert len(first) == 1
 
 
+def test_html_discovery_extracts_same_site_icons_and_social_images():
+    html = """
+    <html><head>
+      <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+      <link rel="apple-touch-icon" href="https://cdn.acme.example/app-icon.png">
+      <meta property="og:image" content="/brand/og.png">
+      <meta name="twitter:image" content="https://evil.example/logo.png">
+    </head></html>
+    """
+
+    candidates = OfficialDomainLogoDiscovery().discover_html(
+        _institution("acme.example"),
+        "https://www.acme.example/about",
+        html,
+    )
+
+    assert [candidate.source_uri for candidate in candidates] == [
+        "https://acme.example/assets/favicon.svg",
+        "https://cdn.acme.example/app-icon.png",
+        "https://acme.example/brand/og.png",
+    ]
+    assert [candidate.discovery_method for candidate in candidates] == [
+        "official_html_link",
+        "official_html_link",
+        "official_html_meta",
+    ]
+    assert all(candidate.rights_status is RightsStatus.SOURCE_LINK_ONLY for candidate in candidates)
+
+
+def test_html_discovery_deduplicates_urls_and_strips_fragments():
+    html = """
+    <link rel="icon" href="/logo.svg#primary">
+    <link rel="shortcut icon" href="https://acme.example/logo.svg">
+    <meta property="og:image" content="/logo.svg#social">
+    """
+
+    candidates = OfficialDomainLogoDiscovery().discover_html(
+        _institution("acme.example"),
+        "https://acme.example/",
+        html,
+    )
+
+    assert len(candidates) == 1
+    assert candidates[0].source_uri == "https://acme.example/logo.svg"
+    assert candidates[0].confidence == 0.9
+
+
+def test_html_discovery_skips_unsafe_or_unrelated_links():
+    html = """
+    <link rel="icon" href="javascript:alert(1)">
+    <link rel="icon" href="data:image/svg+xml;base64,abc">
+    <meta property="og:image" content="http://acme.example/insecure.png">
+    <meta property="og:image" content="https://unrelated.example/logo.png">
+    """
+
+    candidates = OfficialDomainLogoDiscovery().discover_html(
+        _institution("acme.example"),
+        "https://acme.example/",
+        html,
+    )
+
+    assert candidates == []
+
+
+def test_html_discovery_ignores_pages_outside_institution_domains():
+    candidates = OfficialDomainLogoDiscovery().discover_html(
+        _institution("acme.example"),
+        "https://unrelated.example/",
+        '<link rel="icon" href="/logo.svg">',
+    )
+
+    assert candidates == []
+
+
 def test_redistributable_approval_requires_rights_evidence():
     reviewer = LogoRightsReviewer()
 

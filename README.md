@@ -112,7 +112,7 @@ The first live pilot is intentionally not a global coverage release: it combines
 
 ## Logo discovery and rights review
 
-Logo discovery is deliberately separate from downloading and publishing binaries. `OfficialDomainLogoDiscovery` turns the already-curated `Institution.domains` fields into deterministic candidates for common paths (`/logo.svg`, `/favicon.svg`, and `/favicon.ico`). It performs no network requests and marks every candidate `source_link_only`, because an official website is evidence of where a logo lives—not proof that the logo may be redistributed.
+Logo discovery is deliberately separate from downloading and publishing binaries. `OfficialDomainLogoDiscovery` turns the already-curated `Institution.domains` fields into deterministic candidates for common paths (`/logo.svg`, `/favicon.svg`, and `/favicon.ico`). Its `discover_html` parser can also extract same-site `rel=icon`, `apple-touch-icon`, and social-image declarations from HTML fetched by a separately controlled client. Discovery itself performs no network requests and marks every candidate `source_link_only`, because an official website is evidence of where a logo lives—not proof that the logo may be redistributed.
 
 ```python
 from financial_registry.domain import RightsStatus, ReviewStatus
@@ -120,6 +120,13 @@ from financial_registry.logo_discovery import LogoRightsReviewer, OfficialDomain
 
 discovery = OfficialDomainLogoDiscovery()
 candidates = discovery.discover(registry.institutions)
+
+# After a separately policy-controlled HTTPS HTML fetch:
+html_candidates = discovery.discover_html(
+    registry.institutions[0],
+    "https://bank.example/",
+    html_text,
+)
 
 # A reviewer supplies evidence for each approved binary, or approves a link-only record.
 reviewed = LogoRightsReviewer().review(

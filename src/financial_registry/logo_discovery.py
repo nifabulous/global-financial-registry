@@ -11,12 +11,57 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from ipaddress import ip_address
 from typing import Callable
+from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from .domain import AssetCandidate, AssetVariant, Institution, ReviewStatus, RightsStatus
 from .ids import StableIdAllocator
 from .normalize import normalize_domain
+
+
+class _LogoHtmlParser(HTMLParser):
+    """Extract logo-bearing HTML declarations without interpreting page scripts."""
+
+    _LINK_CONFIDENCE = {
+        "icon": 0.9,
+        "apple-touch-icon": 0.85,
+        "apple-touch-icon-precomposed": 0.85,
+        "mask-icon": 0.8,
+    }
+    _META_CONFIDENCE = {
+        "og:image": 0.7,
+        "og:image:url": 0.7,
+        "twitter:image": 0.65,
+        "twitter:image:src": 0.65,
+    }
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.references: list[tuple[str, float, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = {name.casefold(): value for name, value in attrs if name}
+        if tag.casefold() == "link":
+            href = attributes.get("href")
+            rel_tokens = set((attributes.get("rel") or "").casefold().split())
+            confidence = None
+            if "icon" in rel_tokens:
+                confidence = self._LINK_CONFIDENCE["icon"]
+            else:
+                for rel, value in self._LINK_CONFIDENCE.items():
+                    if rel in rel_tokens:
+                        confidence = value
+                        break
+            if href and confidence is not None:
+                self.references.append((href, confidence, "official_html_link"))
+        elif tag.casefold() == "meta":
+            content = attributes.get("content")
+            property_name = (attributes.get("property") or attributes.get("name") or "").casefold()
+            confidence = self._META_CONFIDENCE.get(property_name)
+            if content and confidence is not None:
+                self.references.append((content, confidence, "official_html_meta"))
 
 
 class RightsReviewError(ValueError):
@@ -90,25 +135,109 @@ class OfficialDomainLogoDiscovery:
                     if key in seen:
                         continue
                     seen.add(key)
-                    canonical_key = f"logo:{institution.id}:{domain}{path}"
+                    source_uri = f"https://{domain}{path}"
                     candidates.append(
-                        AssetCandidate(
-                            id=self.id_allocator.allocate("asset", canonical_key),
-                            owner_id=institution.id,
-                            variant=AssetVariant.PRIMARY,
-                            source_id=self.source_id,
-                            source_uri=f"https://{domain}{path}",
-                            rights_status=RightsStatus.SOURCE_LINK_ONLY,
-                            review_status=ReviewStatus.CANDIDATE,
+                        self._candidate(
+                            institution,
+                            source_uri,
                             discovery_method="official_domain_path",
                             confidence=self._confidence(path),
-                            rights_note=(
-                                "Official-domain candidate; visibility on the domain does not establish "
-                                "redistribution permission."
-                            ),
                         )
                     )
         return candidates
+
+    def discover_html(self, institution: Institution, page_url: str, html: str) -> list[AssetCandidate]:
+        """Extract logo links advertised by an institution's official HTML page.
+
+        Only HTTPS links on the institution's normalized domain or its subdomains
+        are retained. Fragments, unrelated hosts, scripts, data URLs, and HTTP
+        links are discarded. The HTML is supplied by the caller so this method
+        remains a pure parser and performs no network requests.
+        """
+
+        if not isinstance(html, str):
+            raise TypeError("HTML content must be a string")
+        parsed_page = urlsplit(page_url)
+        if parsed_page.scheme.casefold() != "https" or not parsed_page.hostname:
+            raise ValueError("official HTML page URL must use HTTPS and include a hostname")
+        page_domain = normalize_domain(parsed_page.hostname)
+        institution_domains = {
+            normalize_domain(value) for value in institution.domains if normalize_domain(value)
+        }
+        if not any(self._host_matches_domain(page_domain, domain) for domain in institution_domains):
+            return []
+
+        parser = _LogoHtmlParser()
+        parser.feed(html)
+        parser.close()
+        references: dict[str, tuple[float, str]] = {}
+        for raw_url, confidence, discovery_method in parser.references:
+            source_uri = self._resolve_html_link(raw_url, page_url, institution_domains)
+            if source_uri is None:
+                continue
+            prior = references.get(source_uri)
+            if prior is None or confidence > prior[0]:
+                references[source_uri] = (confidence, discovery_method)
+
+        return [
+            self._candidate(
+                institution,
+                source_uri,
+                discovery_method=discovery_method,
+                confidence=confidence,
+            )
+            for source_uri, (confidence, discovery_method) in sorted(
+                references.items(), key=lambda item: (-item[1][0], item[0])
+            )
+        ]
+
+    def _candidate(
+        self,
+        institution: Institution,
+        source_uri: str,
+        *,
+        discovery_method: str,
+        confidence: float,
+    ) -> AssetCandidate:
+        canonical_key = f"logo:{institution.id}:{source_uri}"
+        return AssetCandidate(
+            id=self.id_allocator.allocate("asset", canonical_key),
+            owner_id=institution.id,
+            variant=AssetVariant.PRIMARY,
+            source_id=self.source_id,
+            source_uri=source_uri,
+            rights_status=RightsStatus.SOURCE_LINK_ONLY,
+            review_status=ReviewStatus.CANDIDATE,
+            discovery_method=discovery_method,
+            confidence=confidence,
+            rights_note=(
+                "Official-domain candidate; visibility on the domain does not establish "
+                "redistribution permission."
+            ),
+        )
+
+    @classmethod
+    def _resolve_html_link(cls, raw_url: str, page_url: str, institution_domains: set[str]) -> str | None:
+        resolved = urljoin(page_url, raw_url.strip())
+        parsed = urlsplit(resolved)
+        if parsed.scheme.casefold() != "https" or not parsed.hostname:
+            return None
+        if parsed.username or parsed.password:
+            return None
+        try:
+            if parsed.port not in {None, 443}:
+                return None
+        except ValueError:
+            return None
+        hostname = normalize_domain(parsed.hostname)
+        if not any(cls._host_matches_domain(hostname, domain) for domain in institution_domains):
+            return None
+        path = parsed.path or "/"
+        return urlunsplit(("https", hostname, path, parsed.query, ""))
+
+    @staticmethod
+    def _host_matches_domain(hostname: str, domain: str) -> bool:
+        return hostname == domain or hostname.endswith(f".{domain}")
 
 
 class LogoRightsReviewer:
