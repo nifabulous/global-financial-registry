@@ -191,6 +191,12 @@ class OfficialDomainLogoDiscovery:
             )
         ]
 
+    def discover_page(self, institution: Institution, page_url: str, fetcher) -> list[AssetCandidate]:
+        """Fetch one official page through an injected client, then parse its HTML."""
+
+        fetched = fetcher.fetch(page_url)
+        return self.discover_html(institution, fetched.final_url, fetched.body)
+
     def _candidate(
         self,
         institution: Institution,

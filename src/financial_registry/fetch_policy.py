@@ -22,6 +22,14 @@ class FetchedAsset:
     content_type: str
 
 
+@dataclass(frozen=True)
+class FetchedHtml:
+    url: str
+    final_url: str
+    body: str
+    content_type: str
+
+
 def default_dns_resolver(hostname: str) -> list[str]:
     return sorted({row[4][0] for row in socket.getaddrinfo(hostname, 443, type=socket.SOCK_STREAM)})
 
@@ -77,12 +85,25 @@ def validate_source_url(url: str, resolver=None) -> str:
 
 
 class SafeHttpxAssetFetcher:
-    def __init__(self, client, resolver, max_redirects=3, max_bytes=5 * 1024 * 1024, timeout=10.0):
+    def __init__(
+        self,
+        client,
+        resolver,
+        max_redirects=3,
+        max_bytes=5 * 1024 * 1024,
+        timeout=10.0,
+        allowed_content_types=None,
+    ):
         self.client = client
         self.resolver = resolver
         self.max_redirects = max_redirects
         self.max_bytes = max_bytes
         self.timeout = timeout
+        self.allowed_content_types = frozenset(
+            allowed_content_types
+            if allowed_content_types is not None
+            else {"image/svg+xml", "image/png", "image/webp"}
+        )
 
     def fetch(self, url: str) -> FetchedAsset:
         current = url
@@ -145,7 +166,30 @@ class SafeHttpxAssetFetcher:
                     if len(body) > self.max_bytes:
                         raise AssetPolicyError("asset response exceeds size limit")
                 content_type = response.headers.get("content-type", "").split(";", 1)[0].strip().lower()
-                if content_type not in {"image/svg+xml", "image/png", "image/webp"}:
+                if content_type not in self.allowed_content_types:
                     raise AssetPolicyError("ambiguous asset content type")
                 return FetchedAsset(url=url, final_url=current, body=bytes(body), content_type=content_type)
         raise AssetPolicyError("unreachable redirect state")
+
+
+class SafeHttpxHtmlFetcher(SafeHttpxAssetFetcher):
+    """Fetch bounded HTML using the same HTTPS, DNS-pinning, and redirect policy."""
+
+    def __init__(self, client, resolver, max_redirects=3, max_bytes=2 * 1024 * 1024, timeout=10.0):
+        super().__init__(
+            client=client,
+            resolver=resolver,
+            max_redirects=max_redirects,
+            max_bytes=max_bytes,
+            timeout=timeout,
+            allowed_content_types={"text/html", "application/xhtml+xml"},
+        )
+
+    def fetch(self, url: str) -> FetchedHtml:
+        fetched = super().fetch(url)
+        return FetchedHtml(
+            url=fetched.url,
+            final_url=fetched.final_url,
+            body=fetched.body.decode("utf-8", errors="replace"),
+            content_type=fetched.content_type,
+        )

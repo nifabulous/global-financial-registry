@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 import pytest
 
 from financial_registry.domain import AssetCandidate, Institution, ReviewStatus, RightsStatus
+from financial_registry.fetch_policy import FetchedHtml
 from financial_registry.logo_discovery import (
     LogoRightsReviewer,
     OfficialDomainLogoDiscovery,
@@ -136,6 +137,27 @@ def test_html_discovery_ignores_pages_outside_institution_domains():
     )
 
     assert candidates == []
+
+
+def test_discover_page_uses_a_controlled_html_fetcher():
+    class FakeHtmlFetcher:
+        def fetch(self, url: str) -> FetchedHtml:
+            assert url == "https://acme.example/"
+            return FetchedHtml(
+                url=url,
+                final_url=url,
+                body='<link rel="icon" href="/logo.svg">',
+                content_type="text/html",
+            )
+
+    candidates = OfficialDomainLogoDiscovery().discover_page(
+        _institution("acme.example"),
+        "https://acme.example/",
+        FakeHtmlFetcher(),
+    )
+
+    assert len(candidates) == 1
+    assert candidates[0].source_uri == "https://acme.example/logo.svg"
 
 
 def test_redistributable_approval_requires_rights_evidence():

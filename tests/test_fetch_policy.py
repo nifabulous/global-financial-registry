@@ -4,6 +4,7 @@ import pytest
 from financial_registry.fetch_policy import (
     AssetPolicyError,
     SafeHttpxAssetFetcher,
+    SafeHttpxHtmlFetcher,
     UnsafeSourceUrl,
     validate_source_url,
 )
@@ -60,3 +61,61 @@ def test_fetcher_rejects_ambiguous_content_type():
     )
     with pytest.raises(AssetPolicyError, match="content type"):
         fetcher.fetch("https://public.test/logo.svg")
+
+
+def test_html_fetcher_pins_dns_and_returns_decoded_html():
+    requests = []
+
+    def transport(request):
+        requests.append(request)
+        return httpx.Response(
+            200,
+            headers={"content-type": "text/html; charset=utf-8"},
+            content=b'<link rel="icon" href="/logo.svg">',
+        )
+
+    client = httpx.Client(transport=httpx.MockTransport(transport))
+    try:
+        fetched = SafeHttpxHtmlFetcher(client, lambda _host: ["8.8.8.8"]).fetch(
+            "https://public.test/"
+        )
+    finally:
+        client.close()
+
+    assert requests[0].url.host == "8.8.8.8"
+    assert requests[0].headers["host"] == "public.test"
+    assert fetched.final_url == "https://public.test/"
+    assert fetched.content_type == "text/html"
+    assert '<link rel="icon"' in fetched.body
+
+
+def test_html_fetcher_rejects_non_html_content_type():
+    client = httpx.Client(
+        transport=httpx.MockTransport(
+            lambda _request: httpx.Response(200, headers={"content-type": "image/svg+xml"}, content=b"<svg/>")
+        )
+    )
+    try:
+        fetcher = SafeHttpxHtmlFetcher(client, lambda _host: ["8.8.8.8"])
+        with pytest.raises(AssetPolicyError, match="content type"):
+            fetcher.fetch("https://public.test/")
+    finally:
+        client.close()
+
+
+def test_html_fetcher_enforces_html_size_limit():
+    client = httpx.Client(
+        transport=httpx.MockTransport(
+            lambda _request: httpx.Response(
+                200,
+                headers={"content-type": "text/html"},
+                content=b"x" * 32,
+            )
+        )
+    )
+    try:
+        fetcher = SafeHttpxHtmlFetcher(client, lambda _host: ["8.8.8.8"], max_bytes=16)
+        with pytest.raises(AssetPolicyError, match="size"):
+            fetcher.fetch("https://public.test/")
+    finally:
+        client.close()
