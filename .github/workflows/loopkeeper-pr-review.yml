@@ -1,0 +1,48 @@
+name: Loopkeeper PR Review (Stage A)
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_run:
+    workflows: ["Global Registry Core"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Open pull request number to review
+        required: true
+        type: number
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+  pull-requests: read
+
+jobs:
+  review:
+    # Global Registry Core also runs for pushes. Those workflow_run events have
+    # no PR target and must not invoke a PR review.
+    if: >-
+      ${{
+        github.event_name != 'workflow_run' ||
+        (github.event.workflow_run.event == 'pull_request' &&
+         github.event.workflow_run.pull_requests[0].number != null)
+      }}
+    uses: nifabulous/loopkeeper/.github/workflows/pr-review.yml@58a6342076e2c11607a9af211172c3b777b35d78
+    with:
+      consumer_repo: ${{ github.repository }}
+      loopkeeper_repo: nifabulous/loopkeeper
+      consumer_trusted_sha: ""
+      loopkeeper_sha: 58a6342076e2c11607a9af211172c3b777b35d78
+      ci_workflow_name: Global Registry Core
+      ci_workflow_file: registry-core.yml
+      expected_head_sha: ${{ github.event.workflow_run.head_sha || '' }}
+      job_timeout_seconds: 1200
+      post_comments: false
+      pr_number: ${{ github.event.pull_request.number || github.event.workflow_run.pull_requests[0].number || inputs.pr_number }}
+      policy_path: .github/codex/review-policy.md
+      contract_path: ""
+      context_path: .github/codex/context-files.txt
+    secrets:
+      model_api_key: ${{ secrets.LOOPKEEPER_API_KEY }}
