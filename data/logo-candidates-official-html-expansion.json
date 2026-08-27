@@ -1,0 +1,122 @@
+[
+  {
+    "id": "asset_cd865c4e721058eb9dda5f1d1c57afa5",
+    "owner_id": "inst_15824657470c5639a8010a680261a273",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://apollotrust.com/wp-content/uploads/2023/02/cropped-favicon-192x192.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_feba5a1b81675974a8307892fac5a463",
+    "owner_id": "inst_03ee2b97097d56f39650f688fe453ba2",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://sabinebank.com/Portals/SabineStateBank/favicon.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_7ad2836fe46a50c3b0a15170ce945ae0",
+    "owner_id": "inst_0e3d8275a31554af811aac6948bce4fe",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://ctbi.com/Portals/CommunityTrustBank/Images/favicon.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_847f5377969556a3969bcb09536e290a",
+    "owner_id": "inst_17d0a514cb185905b12b815efeb4db52",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://frostbank.com/favicon.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_3689d5f2fa0b52c9b46ca9c1235a8d72",
+    "owner_id": "inst_17d0a514cb185905b12b815efeb4db52",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://frostbank.com/apple-touch-icon.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.85,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_8c8adf3551e45939844a6c3b24b45948",
+    "owner_id": "inst_1d910acee34357c3bd49fcd597c641a2",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://fnbo.com/content/dam/fnbo/logos/favicons/android-chrome-192x192.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_855fc15487905f3ba963b249e3f229c0",
+    "owner_id": "inst_2636c58986dd5567b0fe1d216c57ff34",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://abt.bank/wp-content/uploads/2022/02/American-Bank-and-Trust-Favicon.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_5f7ed246c9185a99b65089b8d651af80",
+    "owner_id": "inst_1a61f724364d59609f170a7ffdefa364",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://fultonbank.com/-/media/Images/Logos/fulton-og-logo.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_meta",
+    "confidence": 0.7,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_37fc094022fc5edd9b0f26524bb746a5",
+    "owner_id": "inst_e17e2f08f88f544ebbc13ae1e4046bd8",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://bny.com/content/dam/bnymellon/web/img/bnym-logo-350x350.jpg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_meta",
+    "confidence": 0.7,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_40035dd7a69c5bc0a87ed000ea913338",
+    "owner_id": "inst_ee4ad7cd315f5718b5cad362212f91aa",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://alliantbank.com/dA/3e8d43afc22757ec65144984261165dc/favicon/",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_link",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; visibility on the domain does not establish redistribution permission."
+  }
+]

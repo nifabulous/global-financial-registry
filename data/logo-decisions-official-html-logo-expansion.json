@@ -1,0 +1,40 @@
+{
+  "decisions": [
+    {
+      "candidate_id": "asset_a0da84abca855d0fb7f506d3e9679cec",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-domain logo discovered from the institution HTML page; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied.",
+      "attribution_text": "Institution official website; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_aa41e1eb3a7659ca859d6d4f5e50aa9a",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-domain logo discovered from the institution HTML page; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied.",
+      "attribution_text": "Institution official website; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_8dba23f38c4b5268b4263ed94a9e05af",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-domain logo discovered from the institution HTML page; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied.",
+      "attribution_text": "Institution official website; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "candidate_id": "asset_fd64db9c7aab588c8b10cc3d4d655c7e",
+      "review_status": "approved",
+      "rights_status": "nominative_use",
+      "rights_note": "Official-domain logo discovered from the institution HTML page; no open copyright licence is asserted. Display only to identify the corresponding institution; no endorsement or affiliation implied.",
+      "attribution_text": "Institution official website; bank trademark remains the property of its respective owner.",
+      "reviewed_by": "registry-maintainers",
+      "reviewed_at": "2026-08-27T00:00:00Z"
+    }
+  ]
+}

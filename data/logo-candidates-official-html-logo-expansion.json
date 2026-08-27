@@ -1,0 +1,50 @@
+[
+  {
+    "id": "asset_a0da84abca855d0fb7f506d3e9679cec",
+    "owner_id": "inst_03ee2b97097d56f39650f688fe453ba2",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://sabinebank.com/Portals/SabineStateBank/SabineLogo.jpg?ver=MlTfgqsancYkX89WJ4xFrQ%3d%3d",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_img",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; image URL was declared in the institution home page. Visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_aa41e1eb3a7659ca859d6d4f5e50aa9a",
+    "owner_id": "inst_0e3d8275a31554af811aac6948bce4fe",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.ctbi.com/Portals/CommunityTrustBank/Images/LogoCTB.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_img",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; image URL was declared in the institution home page. Visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_8dba23f38c4b5268b4263ed94a9e05af",
+    "owner_id": "inst_0e3d8275a31554af811aac6948bce4fe",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.ctbi.com/Portals/CommunityTrustBank/Images/LogoCTBI_byline.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_img",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; image URL was declared in the institution home page. Visibility on the domain does not establish redistribution permission."
+  },
+  {
+    "id": "asset_fd64db9c7aab588c8b10cc3d4d655c7e",
+    "owner_id": "inst_0e3d8275a31554af811aac6948bce4fe",
+    "variant": "primary",
+    "source_id": "src_official_domain_logo",
+    "source_uri": "https://www.ctbi.com/Portals/CommunityTrustBank/Images/LogoCTBW.png",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "official_html_img",
+    "confidence": 0.9,
+    "rights_note": "Official-domain candidate; image URL was declared in the institution home page. Visibility on the domain does not establish redistribution permission."
+  }
+]

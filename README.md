@@ -117,7 +117,7 @@ report = assembler.assemble_with_report(gleif_candidates + fdic_candidates + ecb
 registry = report.registry
 ```
 
-The first live pilot is intentionally not a global coverage release: it combines a bounded FDIC sample, its matching GLEIF records, and the current ECB workbook. `data/registry.json` is the metadata-only baseline; the separate `data/registry-with-logos.json` output contains the first reviewed logo sample.
+The first live pilot is intentionally not a global coverage release: it combines a bounded FDIC sample, its matching GLEIF records, and the current ECB workbook. `data/registry.json` remains the metadata-only institution baseline; the separate `data/registry-with-logos.json` output is the reviewed logo enrichment and may also contain brand-only records that have not yet been linked to a legal entity.
 
 ### Bounded source pilot
 
@@ -222,13 +222,24 @@ The checked-in logo pilot (`data/logo-candidates-simple-icons.json` and
 for Bank of America, Chase, Wells Fargo, Deutsche Bank, Commerzbank, CaixaBank,
 HSBC, Barclays, Goldman Sachs, Revolut, and Wise. A second queue
 (`data/logo-candidates-official-png.json`) adds four official-site PNG app marks
-for Bank of America, JPMorgan Chase, Wells Fargo, and Capital One. They are
-published as `nominative_use`, not as open-licensed artwork: source versions,
-source URLs, and the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+for Bank of America, JPMorgan Chase, Wells Fargo, and Capital One.
+
+The expansion queues add 25 global financial brand SVGs from the same pinned
+Simple Icons release (`data/logo-brand-records.json`,
+`data/logo-candidates-simple-icons-brand-expansion.json`) and 18 additional
+institution assets discovered from official HTML declarations
+(`data/logo-candidates-official-html-expansion.json`,
+`data/logo-candidates-official-html-logo-expansion.json`), including SVG, PNG,
+and JPEG sources. The brand records are intentionally `status: unknown` until
+they are matched to an institution or regulator source; they are not a global
+bank coverage claim. The derived registry currently contains 54 binary assets
+(37 SVG, 15 PNG, and 2 JPEG), all explicitly reviewed as `nominative_use`, not as
+open-licensed artwork. Source versions, source URLs, and the [Simple Icons
+disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
 are retained with each asset, and downstream use is limited to identifying the
-corresponding institution without implying endorsement or affiliation. The
-derived registry and staged binaries are in `data/registry-with-logos.json` and
-`data/assets/logos/`.
+corresponding institution or brand without implying endorsement or affiliation.
+The derived registry and staged binaries are in
+`data/registry-with-logos.json` and `data/assets/logos/`.
 
 `nominative_use` is intended for an upstream source that documents this narrow
 identification-only basis—for example, the [`logos-bancos-br`](https://github.com/rzmt/logos-bancos-br)

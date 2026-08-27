@@ -1,0 +1,327 @@
+[
+  {
+    "id": "brand_870999934c895de3a592df124dae37e5",
+    "display_name": "Adyen",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_1d6a5d87d8a5540498c9a38b322d4b98",
+    "display_name": "AIB",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_ccf0e0136f385638943c5134c9e3472c",
+    "display_name": "Alipay",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_1670ec51e9db52779422a19cfa60355d",
+    "display_name": "American Express",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_81df2bb77c095ac69db6f4357ae7a7b9",
+    "display_name": "Axis Bank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_c35f296786015f268c0d53eb44258b52",
+    "display_name": "HDFC Bank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_24a797cbe23153499a5f5997d961c454",
+    "display_name": "ICICI Bank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_8cbfdcd1dcc35c01ae085f4ec87237f9",
+    "display_name": "Klarna",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_04a6ddd00a1c5d7ba48dd435f31ed0c6",
+    "display_name": "MasterCard",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_528b5f0914805dcaadcef909444f1d4b",
+    "display_name": "Mercado Pago",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_beb04fcd13af5e949c41187b3ab27f36",
+    "display_name": "MoneyGram",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_43dd05d9d3335ddd90c274704776f898",
+    "display_name": "Monzo",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_0201ce26cf4e5f42b5b46e5133f1f81b",
+    "display_name": "Nubank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_6a355cc74ac1561b82cea9a2a993b733",
+    "display_name": "Payoneer",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_8cf01c1c2c2b55789b9c259be138da32",
+    "display_name": "PayPal",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_40403f48a13b5c73ad73c9d26a1e7ec3",
+    "display_name": "Paytm",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_b108932370115e3db89808fc6b66f360",
+    "display_name": "PhonePe",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_3a4083c9349a56d886cadc81b5dd88e2",
+    "display_name": "PicPay",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_c78faff155355836bc0f77d2c4e6be15",
+    "display_name": "Razorpay",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_dd99a3d1a32857d2909fb858d45f3991",
+    "display_name": "Starling Bank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_47340cf494d955d1bc7ef52518993c20",
+    "display_name": "Stripe",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_7afdb1083cd15121b36f1299912a0907",
+    "display_name": "Thurgauer Kantonalbank",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_a622cf4fa3075e84849baaac8b0b450b",
+    "display_name": "Visa",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_1c4541ed080a5f05a1284e52bd9db22e",
+    "display_name": "Viva Wallet",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  },
+  {
+    "id": "brand_26ac65563094540ebd95f87fe77add97",
+    "display_name": "Venmo",
+    "aliases": [],
+    "localized_names": {},
+    "country_codes": [],
+    "domains": [],
+    "source_ids": [
+      "src_simple_icons"
+    ],
+    "status": "unknown",
+    "confidence": 0.75
+  }
+]
