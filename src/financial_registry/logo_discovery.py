@@ -277,6 +277,7 @@ class LogoRightsReviewer:
                 license_url=license_url,
                 permission_reference=permission_reference,
                 territories=territory_values,
+                rights_note=rights_note,
             )
 
         values = candidate.model_dump(mode="python")
@@ -304,11 +305,14 @@ class LogoRightsReviewer:
         license_url: str | None,
         permission_reference: str | None,
         territories: Iterable[str] | None,
+        rights_note: str | None,
     ) -> None:
         if rights_status in {RightsStatus.UNKNOWN, RightsStatus.REMOVED}:
             raise RightsReviewError("unknown or removed rights cannot be approved")
         if rights_status is RightsStatus.REDISTRIBUTABLE and not (license_url or permission_reference):
             raise RightsReviewError("redistributable approval requires a license URL or permission reference")
+        if rights_status is RightsStatus.NOMINATIVE_USE and not rights_note:
+            raise RightsReviewError("nominative-use approval requires rights_note policy evidence")
         if rights_status is RightsStatus.LICENSED:
             if not permission_reference:
                 raise RightsReviewError("licensed approval requires permission_reference")
@@ -323,6 +327,8 @@ class LogoRightsReviewer:
             return False
         if candidate.rights_status is RightsStatus.REDISTRIBUTABLE:
             return bool(candidate.license_url or candidate.permission_reference)
+        if candidate.rights_status is RightsStatus.NOMINATIVE_USE:
+            return bool(candidate.rights_note)
         if candidate.rights_status is RightsStatus.LICENSED:
             if not candidate.permission_reference or not candidate.territories:
                 return False

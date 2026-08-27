@@ -41,6 +41,22 @@ def test_source_link_only_asset_has_no_public_binary():
     assert result.public_binary is None
 
 
+def test_nominative_use_asset_has_public_binary_with_policy_note():
+    body = b'<svg xmlns="http://www.w3.org/2000/svg"><rect width="4" height="4"/></svg>'
+    candidate = AssetCandidate(
+        owner_id="brand_demo",
+        variant="primary",
+        source_id="src_demo",
+        source_uri="https://example.test/logo.svg",
+        rights_status=RightsStatus.NOMINATIVE_USE,
+        rights_note="Nominative identification use only; no endorsement implied.",
+    )
+
+    result = AssetProcessor(url_validator=lambda url: url).process(candidate, FakeFetcher(body))
+
+    assert result.public_binary is not None
+
+
 def test_svg_external_reference_is_rejected():
     body = b'<svg xmlns="http://www.w3.org/2000/svg"><image href="https://evil.test/x"/></svg>'
     candidate = AssetCandidate(

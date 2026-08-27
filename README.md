@@ -42,7 +42,7 @@ financial-registry wikidata-logo-discover data/registry.json data/wikidata-mappi
 ### Guarantees
 
 - **Source of truth:** The published release bundle (`institutions.json`, `brands.json`, `identifiers.json`, `aliases.json`, `rekey-events.json`, `relationships.json`, `assets-manifest.json`, `sources.json`, `checksums.txt`, `schema-version.json`) is the only publication output.
-- **Rights gate:** Binary assets are emitted only for `redistributable` and `licensed` rights states. `source_link_only` emits metadata and a source URI without a public binary. `unknown`, `removed`, and `source_link_only` assets never emit a public binary; licensed assets require `permission_reference`, territory coverage, and a non-expired permission.
+- **Rights gate:** Binary assets are emitted for `redistributable`, `licensed`, and explicitly reviewed `nominative_use` rights states. `source_link_only` emits metadata and a source URI without a public binary. `unknown`, `removed`, and `source_link_only` assets never emit a public binary; licensed assets require `permission_reference`, territory coverage, and a non-expired permission. Nominative-use assets require a policy note and are limited to identifying the corresponding institution without implying endorsement.
 - **Source ingestion:** `GLEIFConnector` fetches a bounded, replayable slice of the public GLEIF LEI API into a content-addressed snapshot, then normalizes LEI, BIC, registration, name, and jurisdiction data into `CandidateRecord` values. Regulator-specific crawlers remain separate adapters.
 - **Identity:** Every institution has a curated `canonical_key`; source identifiers are aliases and `RekeyEvent` preserves history without changing the canonical ID. Brand ownership is via sourced `Relationship(brand_of)`.
 - **Provenance:** Every published record references a source and successful `SourceRun`. Source failures preserve the prior verified snapshot as warnings.
@@ -169,7 +169,7 @@ reviewed = LogoRightsReviewer().review(
 )
 ```
 
-The reviewer requires a license URL or permission reference for `redistributable` approval, and a permission reference plus territory coverage for `licensed` approval. `source_link_only`, `unknown`, and `removed` candidates never become public binaries; only explicitly approved candidates with usable rights evidence may proceed to the existing `AssetProcessor` fetch/sanitize step. This keeps the initial global run useful as a review queue without making an unsupported trademark or copyright claim.
+The reviewer requires a license URL or permission reference for `redistributable` approval, a permission reference plus territory coverage for `licensed` approval, and an explicit policy note for `nominative_use` approval. `source_link_only`, `unknown`, and `removed` candidates never become public binaries; only explicitly approved candidates with usable rights evidence may proceed to the existing `AssetProcessor` fetch/sanitize step. This keeps the initial global run useful as a review queue without making an unsupported trademark or copyright claim.
 
 ### Promoting reviewed logos
 
@@ -184,9 +184,8 @@ the bytes.
     {
       "candidate_id": "asset_logo_candidate",
       "review_status": "approved",
-      "rights_status": "redistributable",
-      "license_name": "CC BY 4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_status": "nominative_use",
+      "rights_note": "Display only to identify the corresponding institution; no endorsement implied.",
       "reviewed_by": "reviewer@example.com",
       "reviewed_at": "2026-08-27T12:00:00+00:00"
     }
@@ -205,14 +204,23 @@ financial-registry logo-promote \
   --asset-root data/assets
 ```
 
-Approved `redistributable` and `licensed` candidates are fetched over HTTPS with
-DNS and redirect checks, sanitized, hashed, and staged under `asset_root/logos/`.
+Approved `redistributable`, `licensed`, and `nominative_use` candidates are
+fetched over HTTPS with DNS and redirect checks, sanitized, hashed, and staged
+under `asset_root/logos/`. `nominative_use` does not claim an open copyright
+licence: the policy note travels with the asset and limits downstream use to
+identifying the corresponding institution without implying endorsement.
 The updated registry points to the staged binary and retains the rights evidence.
 An approved `source_link_only` decision emits metadata and the source URL only;
 it never downloads or writes a public binary. Candidates without a decision, or
 with a non-approved decision, remain out of the asset list and are reported as
 warnings. The command fails closed on unknown candidate IDs, duplicate decisions,
 missing registry provenance, unsupported formats, and insufficient rights evidence.
+
+`nominative_use` is intended for an upstream source that documents this narrow
+identification-only basis—for example, the [`logos-bancos-br`](https://github.com/rzmt/logos-bancos-br)
+dataset. It is not an open copyright licence: published assets retain their
+institutional trademark ownership, provenance, use restrictions, and takedown
+metadata. Downstream applications must not imply affiliation or endorsement.
 
 ### Wikidata and Wikimedia Commons metadata
 

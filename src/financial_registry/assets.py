@@ -116,7 +116,11 @@ class AssetProcessor:
                 public_binary=None,
             )
         sanitized = self._sanitize_and_normalize(fetched)
-        public_binary = sanitized if candidate.rights_status in {RightsStatus.REDISTRIBUTABLE, RightsStatus.LICENSED} else None
+        public_binary = sanitized if candidate.rights_status in {
+            RightsStatus.REDISTRIBUTABLE,
+            RightsStatus.LICENSED,
+            RightsStatus.NOMINATIVE_USE,
+        } else None
         return ProcessedAsset(
             sanitized_bytes=sanitized,
             sha256=hashlib.sha256(sanitized).hexdigest(),
@@ -129,6 +133,8 @@ class AssetProcessor:
             raise AssetPolicyError("rights clock must be timezone-aware UTC")
         if candidate.rights_status is RightsStatus.LICENSED and not candidate.permission_reference:
             raise AssetPolicyError("licensed asset is missing permission_reference")
+        if candidate.rights_status is RightsStatus.NOMINATIVE_USE and not candidate.rights_note:
+            raise AssetPolicyError("nominative-use asset is missing rights_note policy evidence")
         if candidate.expires_at:
             if candidate.expires_at.tzinfo is None or candidate.expires_at.utcoffset() is None or candidate.expires_at.utcoffset() != timezone.utc.utcoffset(candidate.expires_at):
                 raise AssetPolicyError("asset expiry must be timezone-aware UTC")

@@ -227,10 +227,12 @@ class ReleaseBuilder:
                         issues.append(ValidationIssue("invalid_checksum", f"assets/{asset.id}/sha256", "sha256 must be 64 char lowercase hex"))
                     if asset.review_status != ReviewStatus.APPROVED:
                         issues.append(ValidationIssue("unapproved_binary", f"assets/{asset.id}", "binary assets must have approved review status"))
-                    if asset.rights_status not in {RightsStatus.REDISTRIBUTABLE, RightsStatus.LICENSED}:
+                    if asset.rights_status not in {RightsStatus.REDISTRIBUTABLE, RightsStatus.LICENSED, RightsStatus.NOMINATIVE_USE}:
                         issues.append(ValidationIssue("rights_violation", f"assets/{asset.id}", f"binary rights {asset.rights_status.value} not permitted"))
                     if asset.rights_status == RightsStatus.LICENSED and not asset.permission_reference:
                         issues.append(ValidationIssue("missing_permission", f"assets/{asset.id}", "licensed binaries require permission_reference"))
+                    if asset.rights_status == RightsStatus.NOMINATIVE_USE and not asset.rights_note:
+                        issues.append(ValidationIssue("missing_nominative_policy", f"assets/{asset.id}", "nominative-use binaries require rights_note policy evidence"))
             # Staging path checks
             if asset.staging_path:
                 if Path(asset.staging_path).is_absolute() or ".." in Path(asset.staging_path).parts:
@@ -415,7 +417,7 @@ class ReleaseBuilder:
                 for asset in assets:
                     if asset.binary_path and asset.staging_path and asset.sha256:
                         # Only copy if rights permitted (already validated)
-                        if asset.rights_status in {RightsStatus.REDISTRIBUTABLE, RightsStatus.LICENSED}:
+                        if asset.rights_status in {RightsStatus.REDISTRIBUTABLE, RightsStatus.LICENSED, RightsStatus.NOMINATIVE_USE}:
                             src = (asset_root / asset.staging_path).resolve()
                             # Double-check containment and no symlink (already validated)
                             dest = tmp_dir / asset.binary_path

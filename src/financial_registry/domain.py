@@ -22,6 +22,7 @@ def _validate_utc_datetime(value: datetime) -> datetime:
 class RightsStatus(str, Enum):
     REDISTRIBUTABLE = "redistributable"
     LICENSED = "licensed"
+    NOMINATIVE_USE = "nominative_use"
     SOURCE_LINK_ONLY = "source_link_only"
     UNKNOWN = "unknown"
     REMOVED = "removed"
@@ -140,6 +141,7 @@ class Asset(BaseModel):
     license_url: str | None = None
     permission_reference: str | None = None
     attribution_text: str | None = None
+    rights_note: str | None = None
     territories: list[str] = Field(default_factory=list)
     expires_at: datetime | None = None
     verified_at: datetime | None = None
@@ -174,6 +176,8 @@ class Asset(BaseModel):
                 raise ValueError("public binaries require source URI, checksum, and binary path")
             if self.rights_status is RightsStatus.LICENSED and not self.permission_reference:
                 raise ValueError("licensed binaries require permission_reference")
+            if self.rights_status is RightsStatus.NOMINATIVE_USE and not self.rights_note:
+                raise ValueError("nominative-use binaries require rights_note policy evidence")
         return self
 
 

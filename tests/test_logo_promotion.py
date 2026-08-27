@@ -137,6 +137,31 @@ def test_promote_source_link_only_approval_does_not_fetch_or_write_binary(tmp_pa
     assert asset.format.value == "svg"
 
 
+def test_promote_nominative_use_candidate_fetches_and_stages_binary(tmp_path):
+    fetcher = FakeFetcher(b'<svg xmlns="http://www.w3.org/2000/svg"><rect width="4" height="4"/></svg>')
+    registry = _registry(tmp_path)
+
+    result = promote_reviewed_logos(
+        registry,
+        [_candidate()],
+        [_decision(
+            rights_status="nominative_use",
+            license_name=None,
+            license_url=None,
+            rights_note="Upstream nominative-use policy; identification only, no endorsement.",
+        )],
+        fetcher=fetcher,
+        processor=AssetProcessor(url_validator=lambda url: url),
+        clock=lambda: NOW,
+    )
+
+    asset = result.registry.assets[0]
+    assert asset.rights_status is RightsStatus.NOMINATIVE_USE
+    assert asset.rights_note == "Upstream nominative-use policy; identification only, no endorsement."
+    assert asset.binary_path == "assets/asset_logo_candidate.svg"
+    assert (tmp_path / asset.staging_path).exists()
+
+
 def test_promote_rejects_decisions_for_unknown_candidates(tmp_path):
     registry = _registry(tmp_path)
 

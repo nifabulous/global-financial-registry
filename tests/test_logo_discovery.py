@@ -210,6 +210,27 @@ def test_source_link_only_review_can_be_approved_for_link_publication_only():
     assert LogoRightsReviewer.can_publish_binary(reviewed) is False
 
 
+def test_nominative_use_approval_requires_policy_note_and_allows_binary():
+    reviewer = LogoRightsReviewer()
+
+    with pytest.raises(RightsReviewError, match="rights_note"):
+        reviewer.review(
+            _candidate(),
+            decision=ReviewStatus.APPROVED,
+            rights_status=RightsStatus.NOMINATIVE_USE,
+        )
+
+    reviewed = reviewer.review(
+        _candidate(),
+        decision=ReviewStatus.APPROVED,
+        rights_status=RightsStatus.NOMINATIVE_USE,
+        rights_note="Nominative identification use only; no endorsement implied.",
+    )
+
+    assert reviewed.rights_status is RightsStatus.NOMINATIVE_USE
+    assert LogoRightsReviewer.can_publish_binary(reviewed) is True
+
+
 def test_approved_redistributable_candidate_is_publishable():
     reviewed = LogoRightsReviewer().review(
         _candidate(),

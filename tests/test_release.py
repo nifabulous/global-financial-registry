@@ -74,6 +74,21 @@ def test_release_rejects_binary_with_unknown_rights(tmp_path, demo_registry: Reg
         )
 
 
+def test_release_accepts_nominative_use_binary_with_policy_note(tmp_path, demo_registry: RegistryInput):
+    demo_registry.assets[0].rights_status = RightsStatus.NOMINATIVE_USE
+    demo_registry.assets[0].rights_note = "Nominative identification use only; no endorsement implied."
+
+    ReleaseBuilder().build(
+        demo_registry,
+        "0.1.0",
+        datetime(2026, 8, 26, tzinfo=timezone.utc),
+        tmp_path / "release",
+        generation_commit="test-commit",
+    )
+
+    assert (tmp_path / "release" / "assets" / "asset_demo.svg").exists()
+
+
 def test_release_rejects_staging_path_escape(tmp_path, demo_registry: RegistryInput):
     demo_registry.assets[0].staging_path = "../outside.svg"
     with pytest.raises(ReleaseValidationError, match="staging"):

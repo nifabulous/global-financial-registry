@@ -28,8 +28,8 @@ def test_release_contract_has_required_files_and_rights_gate(tmp_path):
     }
     assert required <= {path.name for path in tmp_path.iterdir()}
     assets = json.loads((tmp_path / "assets-manifest.json").read_text())
-    assert all(asset["rights_status"] in {"redistributable", "licensed", "source_link_only"} for asset in assets)
-    assert all(asset.get("binary_path") is not None for asset in assets if asset["rights_status"] in {"redistributable", "licensed"})
+    assert all(asset["rights_status"] in {"redistributable", "licensed", "nominative_use", "source_link_only"} for asset in assets)
+    assert all(asset.get("binary_path") is not None for asset in assets if asset["rights_status"] in {"redistributable", "licensed", "nominative_use"})
     assert all(
         not asset.get("binary_path") or not (tmp_path / asset["binary_path"]).exists()
         for asset in assets

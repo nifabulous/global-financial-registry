@@ -79,3 +79,37 @@ def test_licensed_binary_requires_permission_reference():
             sha256="a" * 64,
             binary_path="assets/asset_demo.svg",
         )
+
+
+def test_nominative_use_binary_is_valid_with_policy_note():
+    asset = Asset(
+        id="asset_demo",
+        owner_id="inst_demo",
+        variant="primary",
+        format="svg",
+        source_id="src_demo",
+        source_uri="https://example.test/logo.svg",
+        rights_status=RightsStatus.NOMINATIVE_USE,
+        review_status=ReviewStatus.APPROVED,
+        sha256="a" * 64,
+        binary_path="assets/asset_demo.svg",
+        rights_note="Nominative identification use only; no endorsement implied.",
+    )
+
+    assert asset.rights_status is RightsStatus.NOMINATIVE_USE
+
+
+def test_nominative_use_binary_requires_policy_note():
+    with pytest.raises(ValidationError, match="nominative-use"):
+        Asset(
+            id="asset_demo",
+            owner_id="inst_demo",
+            variant="primary",
+            format="svg",
+            source_id="src_demo",
+            source_uri="https://example.test/logo.svg",
+            rights_status=RightsStatus.NOMINATIVE_USE,
+            review_status=ReviewStatus.APPROVED,
+            sha256="a" * 64,
+            binary_path="assets/asset_demo.svg",
+        )
