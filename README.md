@@ -275,16 +275,28 @@ queue (`data/logo-brand-records-auraveni-global-bank-logos.json`,
 international bank brands with standard and rectangular variants from the
 reviewed [`icongo/bank-logos`](https://github.com/icongo/bank-logos) queue
 (`data/logo-brand-records-icongo-bank-logos.json`,
-`data/logo-candidates-icongo-bank-logos.json`). The derived registry currently
-contains 521 binary assets (504 SVG, 15 PNG, and 2 JPEG), all explicitly
-reviewed as `nominative_use`, not as open-licensed artwork. Source versions,
-source URLs, and upstream legal notices are retained with each asset;
+`data/logo-candidates-icongo-bank-logos.json`). The latest expansion adds 126
+institution marks from the pinned
+[`College-Canine/financial`](https://github.com/College-Canine/financial)
+catalog, selected only where the legal name matched exactly and the logo stem
+matched the institution's official website domain. Its candidate and decision
+queues are retained in `data/logo-candidates-college-canine-financial.json`
+and `data/logo-decisions-college-canine-financial.json`, with the pinned source
+snapshot under `data/snapshots/src_college_canine_financial/`.
+
+The derived registry currently contains 2,537 binary assets (630 SVG, 645 PNG,
+630 WebP, and 632 JPEG), including 1,890 generated raster derivatives. All
+new source marks are explicitly reviewed as `nominative_use`, not as
+open-licensed artwork. Source versions, source URLs, hashes, review decisions,
+and upstream legal notices are retained with each asset;
 the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
 is retained alongside the pinned Simple Icons assets;
-the Auraveni and ICongo MIT licences are treated as applying to repository code
-and packaging, not to the bank artwork or trademarks. Downstream use is limited
-to identifying the corresponding institution or brand without implying
-endorsement or affiliation.
+the Auraveni, ICongo, and College-Canine MIT licences are treated as applying
+to repository code and packaging, not to the bank artwork or trademarks.
+Generated PNG, WebP, and JPEG files are compatibility derivatives of reviewed
+SVGs; they do not assert a separate artwork licence or create additional
+semantic variants. Downstream use is limited to identifying the corresponding
+institution or brand without implying endorsement or affiliation.
 The derived registry and staged binaries are in
 `data/registry-with-logos.json` and `data/assets/logos/`.
 
