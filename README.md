@@ -226,17 +226,21 @@ for Bank of America, JPMorgan Chase, Wells Fargo, and Capital One.
 
 The expansion queues add 25 global financial brand SVGs from the same pinned
 Simple Icons release (`data/logo-brand-records.json`,
-`data/logo-candidates-simple-icons-brand-expansion.json`) and 18 additional
+`data/logo-candidates-simple-icons-brand-expansion.json`), 18 additional
 institution assets discovered from official HTML declarations
 (`data/logo-candidates-official-html-expansion.json`,
-`data/logo-candidates-official-html-logo-expansion.json`), including SVG, PNG,
-and JPEG sources. The brand records are intentionally `status: unknown` until
-they are matched to an institution or regulator source; they are not a global
-bank coverage claim. The derived registry currently contains 54 binary assets
-(37 SVG, 15 PNG, and 2 JPEG), all explicitly reviewed as `nominative_use`, not as
-open-licensed artwork. Source versions, source URLs, and the [Simple Icons
-disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
-are retained with each asset, and downstream use is limited to identifying the
+`data/logo-candidates-official-html-logo-expansion.json`), and 81 Indian and
+international bank marks from the reviewed
+[`auraveni/global-bank-logos`](https://github.com/auraveni/global-bank-logos)
+queue (`data/logo-brand-records-auraveni-global-bank-logos.json`,
+`data/logo-candidates-auraveni-global-bank-logos.json`). The derived registry
+currently contains 135 binary assets (118 SVG, 15 PNG, and 2 JPEG), all
+explicitly reviewed as `nominative_use`, not as open-licensed artwork. Source
+versions, source URLs, and upstream legal notices are retained with each asset;
+the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+is retained alongside the pinned Simple Icons assets;
+the Auraveni MIT licence is treated as applying to repository code, not to the
+bank artwork or trademarks. Downstream use is limited to identifying the
 corresponding institution or brand without implying endorsement or affiliation.
 The derived registry and staged binaries are in
 `data/registry-with-logos.json` and `data/assets/logos/`.

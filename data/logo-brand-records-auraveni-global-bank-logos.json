@@ -1,0 +1,1407 @@
+[
+  {
+    "aliases": [
+      "RBC"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "CA"
+    ],
+    "display_name": "Royal Bank of Canada",
+    "domains": [],
+    "id": "brand_03ca57794ffe5a788cd2dde8e08da9c2",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "ADCB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "AE"
+    ],
+    "display_name": "Abu Dhabi Commercial Bank",
+    "domains": [],
+    "id": "brand_0b9a8676a6d75e20a3e5e85ae0e49216",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "Citi"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "US"
+    ],
+    "display_name": "Citibank",
+    "domains": [],
+    "id": "brand_0b9d169974275ca29e40e2d31979fd22",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "DCB Bank Ltd",
+    "domains": [],
+    "id": "brand_0d842bae74a95ef39ca857ccaf1f917b",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "SE"
+    ],
+    "display_name": "Handelsbanken",
+    "domains": [],
+    "id": "brand_14d35899987b5b098a651b02221c4134",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "AU"
+    ],
+    "display_name": "Commonwealth Bank",
+    "domains": [],
+    "id": "brand_19253ac7d08f5f52919e8b68ec7f74dc",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "JP"
+    ],
+    "display_name": "Mizuho Corporate Bank",
+    "domains": [],
+    "id": "brand_1cf6611cd26a50118c40daaa89530efb",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "CH"
+    ],
+    "display_name": "UBS",
+    "domains": [],
+    "id": "brand_267302cb344e5faa8aeca9a06612c5e9",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Airtel Payments Bank Ltd",
+    "domains": [],
+    "id": "brand_2c064b129c96539ba91d578092eec83b",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Indian Overseas Bank",
+    "domains": [],
+    "id": "brand_2ed4c22e15095fb0b89bc6ab200fc994",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "SG"
+    ],
+    "display_name": "DBS Bank",
+    "domains": [],
+    "id": "brand_33015366ff32537585a266c64ecd89c0",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Kotak Mahindra Bank Ltd",
+    "domains": [],
+    "id": "brand_33ee3f57b4935ca79d0200e6dc410b88",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "BD"
+    ],
+    "display_name": "Sonali Bank",
+    "domains": [],
+    "id": "brand_34ede1237796507aae6cce501cebb342",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "KR"
+    ],
+    "display_name": "Woori Bank",
+    "domains": [],
+    "id": "brand_45a6cc69e7a05c73b025ba3e9a8a8c5d",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "FR"
+    ],
+    "display_name": "BNP Paribas",
+    "domains": [],
+    "id": "brand_4b4c7113ccdc51858efda76b16c2e494",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Karur Vysya Bank Ltd",
+    "domains": [],
+    "id": "brand_4b5df0e890e651329b4c515b8a461d81",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "UCO Bank",
+    "domains": [],
+    "id": "brand_4fb6528c3ac85b8f9bb5be39523b8148",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "KR"
+    ],
+    "display_name": "Industrial Bank of Korea",
+    "domains": [],
+    "id": "brand_55e521b039b75395b46daa6de34add75",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "CA"
+    ],
+    "display_name": "TD Bank",
+    "domains": [],
+    "id": "brand_5699ca45102c52ed991c426abada26fc",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "KR"
+    ],
+    "display_name": "KEB Hana Bank",
+    "domains": [],
+    "id": "brand_64862624d5d9574499fadd577a8d6e7c",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "BBK"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "BH"
+    ],
+    "display_name": "Bank of Bahrain and Kuwait",
+    "domains": [],
+    "id": "brand_670181a7c48f505594fba2ff89f7ce94",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "AU"
+    ],
+    "display_name": "Westpac",
+    "domains": [],
+    "id": "brand_68b72102212e57e1a9284ec9cb2c1f9d",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Central Bank of India",
+    "domains": [],
+    "id": "brand_68ff5c5044da52b19ecff4e9fd192836",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "India Post Payments Bank Ltd",
+    "domains": [],
+    "id": "brand_6ad2be22c4df50b6ac68aabcd41b7481",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "AE"
+    ],
+    "display_name": "Emirates NBD",
+    "domains": [],
+    "id": "brand_6ff4711e419e58d2813b13204afc3721",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "AU Small Finance Bank Ltd",
+    "domains": [],
+    "id": "brand_72b8ab47483a5d028f26b3f124f3b2aa",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Nainital Bank Ltd",
+    "domains": [],
+    "id": "brand_7c65cbd868b25396a73faa96aeba7c76",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "ID"
+    ],
+    "display_name": "Bank Maybank Indonesia",
+    "domains": [],
+    "id": "brand_7d69c713a5cf53a9ae16721c5a2c5280",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Tamilnad Mercantile Bank Ltd",
+    "domains": [],
+    "id": "brand_7dbf41002340549982ada4f47de71ce3",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "CACIB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "FR"
+    ],
+    "display_name": "Crédit Agricole Corporate and Investment Bank",
+    "domains": [],
+    "id": "brand_7f1e18d7af18524bbbafea573bed7dae",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "FAB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "AE"
+    ],
+    "display_name": "First Abu Dhabi Bank",
+    "domains": [],
+    "id": "brand_805c8497f551556a9ee4c2857d5e4f32",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "CSB Bank Limited",
+    "domains": [],
+    "id": "brand_83a0a5ae87f2576d979d7afe491ae413",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "ZA"
+    ],
+    "display_name": "FirstRand Bank",
+    "domains": [],
+    "id": "brand_84621f7eeeb05c879cafc94f59a64004",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Indian Bank",
+    "domains": [],
+    "id": "brand_883b02e8f8cb54149bbf8417f4310856",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "SMBC"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "JP"
+    ],
+    "display_name": "Sumitomo Mitsui Banking Corporation",
+    "domains": [],
+    "id": "brand_8938bd0ddc645a849c48eda67d7708eb",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "LK"
+    ],
+    "display_name": "Bank of Ceylon",
+    "domains": [],
+    "id": "brand_895dd0e962a556e9a06da4ed3182dad2",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "GB"
+    ],
+    "display_name": "NatWest Group",
+    "domains": [],
+    "id": "brand_924d94d45e7753e19419389ce72d2346",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "ANZ"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "AU"
+    ],
+    "display_name": "Australia & New Zealand Banking Group",
+    "domains": [],
+    "id": "brand_9dc6eb743d195c28aee5b537f22fed0b",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Bank of Baroda",
+    "domains": [],
+    "id": "brand_9f592a0648335d7f92863bb1e723fd2b",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "State Bank of India",
+    "domains": [],
+    "id": "brand_a017338ff5fd5e06a76286b3e0c46f94",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Ujjivan Small Finance Bank Ltd",
+    "domains": [],
+    "id": "brand_a2291ff0db375fd9ab78710dd0b95de6",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "ESAF Small Finance Bank Ltd",
+    "domains": [],
+    "id": "brand_a2cd834464865edc8db808d7d6588237",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "IndusInd Bank Ltd",
+    "domains": [],
+    "id": "brand_a478320e6d425a63ab178bb55ff41dde",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "KR"
+    ],
+    "display_name": "Kookmin Bank",
+    "domains": [],
+    "id": "brand_a54f225d583059c0bf3870ef11968a80",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "OCBC"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "SG"
+    ],
+    "display_name": "Oversea-Chinese Banking Corporation",
+    "domains": [],
+    "id": "brand_a93aaa639f7b549898ff3e0f45fbc7da",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "YES Bank Ltd",
+    "domains": [],
+    "id": "brand_aa142294a3a15cff9dc9f96931f76224",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "CA"
+    ],
+    "display_name": "Scotiabank",
+    "domains": [],
+    "id": "brand_aa303ed36944528f9d55b24d209eb0a6",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "City Union Bank Ltd",
+    "domains": [],
+    "id": "brand_aa522bd60ff45b1c94393f831a2da1b4",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "ICBC"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "CN"
+    ],
+    "display_name": "Industrial & Commercial Bank of China",
+    "domains": [],
+    "id": "brand_ad85545a98145694bbb93e9701a09796",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Bank of India",
+    "domains": [],
+    "id": "brand_b09018782e6857d08df52598c8c6a97a",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "DK"
+    ],
+    "display_name": "Saxo Bank",
+    "domains": [],
+    "id": "brand_b14fcec6d5bc517081b528c29d7e053c",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "QNB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "QA"
+    ],
+    "display_name": "Qatar National Bank",
+    "domains": [],
+    "id": "brand_b40e4e011c7c5a1a85b817a2b0521154",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "NL"
+    ],
+    "display_name": "Rabobank",
+    "domains": [],
+    "id": "brand_b45035b9d9395d8dbe79f1223db0a9c0",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "FINO Payments Bank Ltd",
+    "domains": [],
+    "id": "brand_b57f954e8b11576eb95e0e24e595b42b",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "BOC"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "CN"
+    ],
+    "display_name": "Bank of China",
+    "domains": [],
+    "id": "brand_b65d3f058dee56d2a60884f213b420cf",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Union Bank of India",
+    "domains": [],
+    "id": "brand_b8b8f6f29a555504a2ebd92e41865e5a",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "UOB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "SG"
+    ],
+    "display_name": "United Overseas Bank",
+    "domains": [],
+    "id": "brand_b8f929181e855b4faf45dacdf54fcf37",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Jammu & Kashmir Bank Ltd",
+    "domains": [],
+    "id": "brand_bad446a2071f5d7c96798f7a59ea225e",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "QA"
+    ],
+    "display_name": "Doha Bank",
+    "domains": [],
+    "id": "brand_c0e1b584c485592eacb690b84b5292ae",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "KR"
+    ],
+    "display_name": "Shinhan Bank",
+    "domains": [],
+    "id": "brand_c2a6a11c54025b4b9bb8d7a4b0753073",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Punjab & Sind Bank",
+    "domains": [],
+    "id": "brand_cc48aff0555b5d5a8ee9e72d85b6e477",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "IDBI Bank Limited",
+    "domains": [],
+    "id": "brand_cfa1cfe24262574ea061c5d009d9d750",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "RBL Bank Ltd",
+    "domains": [],
+    "id": "brand_cfafeff3e1b55969a03352e7439d7423",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Jio Payments Bank Ltd",
+    "domains": [],
+    "id": "brand_d47ca9c22592562f8cdb16497c5ff8a8",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "GB"
+    ],
+    "display_name": "Standard Chartered Bank",
+    "domains": [],
+    "id": "brand_ddd7e4884b2359a7ba4091b28704460c",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Bank of Maharashtra",
+    "domains": [],
+    "id": "brand_de8b0f81ec9d53879d19449dbfd3141e",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Bandhan Bank Ltd",
+    "domains": [],
+    "id": "brand_de9cbebbcf785644a19a0efb1a80596e",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [
+      "NAB"
+    ],
+    "confidence": 0.78,
+    "country_codes": [
+      "AU"
+    ],
+    "display_name": "National Australia Bank",
+    "domains": [],
+    "id": "brand_e1164b607de558fb9f8531d204029989",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "FR"
+    ],
+    "display_name": "Société Générale",
+    "domains": [],
+    "id": "brand_e51058fe942a58ceb2acca75dfc0bedf",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Canara Bank",
+    "domains": [],
+    "id": "brand_e85930d1f13b5f90b301528d4efda96c",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "IDFC FIRST Bank Limited",
+    "domains": [],
+    "id": "brand_ea754354bf4b56c899d1ef53927299ba",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Federal Bank Ltd",
+    "domains": [],
+    "id": "brand_efd8482d07115a0a97291faa4dc35a3d",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Punjab National Bank",
+    "domains": [],
+    "id": "brand_f1414120d842541cacc0a5c37d84cf9f",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "CH"
+    ],
+    "display_name": "Credit Suisse",
+    "domains": [],
+    "id": "brand_f2b843b342a75e05b4f856165fda0c1e",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "JP"
+    ],
+    "display_name": "MUFG Bank",
+    "domains": [],
+    "id": "brand_f2bf3ed5c9e35420915061e604c43353",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "NL"
+    ],
+    "display_name": "ABN AMRO",
+    "domains": [],
+    "id": "brand_f3b320ba055d5c16b28502acba8fb0bf",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Dhanlaxmi Bank Ltd",
+    "domains": [],
+    "id": "brand_f4a5653901945e898650a08a735342e3",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "RU"
+    ],
+    "display_name": "Sberbank",
+    "domains": [],
+    "id": "brand_f8a66890adee5993bf72736c6ba520ed",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "Karnataka Bank Ltd",
+    "domains": [],
+    "id": "brand_f9705503e4945b7cb518df5d31931ce3",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "TH"
+    ],
+    "display_name": "Krung Thai Bank",
+    "domains": [],
+    "id": "brand_f9a27dd2d73b5e8baa9289e4ae532303",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  },
+  {
+    "aliases": [],
+    "confidence": 0.78,
+    "country_codes": [
+      "IN"
+    ],
+    "display_name": "South Indian Bank Ltd",
+    "domains": [],
+    "id": "brand_fac83212fd245b58b7ac9a596d9bacd6",
+    "localized_names": {},
+    "source_ids": [
+      "src_auraveni_global_bank_logos"
+    ],
+    "status": "unknown",
+    "valid_from": null,
+    "valid_to": null
+  }
+]
