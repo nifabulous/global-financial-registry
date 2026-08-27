@@ -118,3 +118,22 @@ def test_nominative_use_binary_requires_policy_note():
             sha256="a" * 64,
             binary_path="assets/asset_demo.svg",
         )
+
+
+def test_binary_asset_can_record_its_source_asset():
+    asset = Asset(
+        id="asset_demo_png",
+        owner_id="inst_demo",
+        variant="primary",
+        format="png",
+        source_id="src_demo",
+        source_uri="https://example.test/logo.svg",
+        rights_status=RightsStatus.NOMINATIVE_USE,
+        review_status=ReviewStatus.APPROVED,
+        sha256="a" * 64,
+        binary_path="assets/asset_demo_png.png",
+        rights_note="Nominative identification use only; no endorsement implied.",
+        derived_from="asset_demo",
+    )
+
+    assert asset.derived_from == "asset_demo"

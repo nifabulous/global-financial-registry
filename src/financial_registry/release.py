@@ -178,11 +178,17 @@ class ReleaseBuilder:
                     issues.append(ValidationIssue("stale_source", f"brands/{brand.id}/source_ids", f"brand source {sid} has no successful run"))
         # Asset validations
         binary_paths_seen = set()
+        asset_by_id = {asset.id: asset for asset in registry.assets}
         for asset in registry.assets:
             if asset.owner_id not in all_entity_ids:
                 issues.append(ValidationIssue("dangling_reference", f"assets/{asset.id}/owner_id", f"asset owner {asset.owner_id} not found"))
             if asset.source_id not in source_ids:
                 issues.append(ValidationIssue("missing_provenance", f"assets/{asset.id}", f"asset missing valid source {asset.source_id}"))
+            if asset.derived_from:
+                if asset.derived_from == asset.id:
+                    issues.append(ValidationIssue("invalid_derived_reference", f"assets/{asset.id}/derived_from", "asset cannot derive from itself"))
+                elif asset.derived_from not in asset_by_id:
+                    issues.append(ValidationIssue("dangling_reference", f"assets/{asset.id}/derived_from", f"source asset {asset.derived_from} not found"))
             # Check duplicate binary paths and reserved names
             RESERVED = {
                 "institutions.json",

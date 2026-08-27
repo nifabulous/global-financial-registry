@@ -137,6 +137,7 @@ class Asset(BaseModel):
     height: int | None = Field(default=None, ge=1, le=4096)
     binary_path: str | None = None
     staging_path: str | None = None
+    derived_from: str | None = None
     license_note: str | None = None
     license_name: str | None = None
     license_url: str | None = None

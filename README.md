@@ -238,6 +238,23 @@ with a non-approved decision, remain out of the asset list and are reported as
 warnings. The command fails closed on unknown candidate IDs, duplicate decisions,
 missing registry provenance, unsupported formats, and insufficient rights evidence.
 
+### Generating compatibility formats
+
+SVG remains the canonical source asset. Generate raster compatibility formats
+after review with:
+
+```bash
+financial-registry logo-derive \
+  data/registry-with-logos.json \
+  data/registry-with-logos-derived.json \
+  --formats png,webp,jpg \
+  --width 512
+```
+
+Each generated PNG, WebP, or JPEG retains the source asset's owner, variant,
+rights policy, and provenance, and records the canonical SVG in `derived_from`.
+JPEG derivatives use a white background because JPEG has no transparency.
+
 The checked-in logo pilot (`data/logo-candidates-simple-icons.json` and
 `data/logo-decisions.json`) promotes eleven pinned Simple Icons v16.21.0 SVGs
 for Bank of America, Chase, Wells Fargo, Deutsche Bank, Commerzbank, CaixaBank,

@@ -11,6 +11,7 @@ from .assets import AssetProcessor
 from .connectors import ECBConnector, FDICConnector, GLEIFConnector
 from .domain import RegistryInput
 from .fetch_policy import AssetPolicyError, SafeHttpxAssetFetcher, default_dns_resolver
+from .logo_derivatives import LogoDerivativeError, derive_logo_variants
 from .logo_discovery import OfficialDomainLogoDiscovery
 from .logo_promotion import (
     load_logo_candidates,
@@ -278,6 +279,49 @@ def logo_promote(
     typer.echo(
         f"logo promotion: {len(result.assets)} assets, {len(result.warnings)} warnings -> {output_path}"
     )
+
+
+@app.command("logo-derive")
+def logo_derive(
+    input_path: str = typer.Argument(...),
+    output_path: str = typer.Argument(...),
+    formats: str = typer.Option("png,webp,jpg", "--formats"),
+    width: int = typer.Option(512, "--width", min=1, max=4096),
+    asset_root: str | None = typer.Option(None, "--asset-root"),
+) -> None:
+    """Generate compatibility raster derivatives from approved SVG assets."""
+
+    try:
+        registry = _load(input_path)
+        requested_formats = tuple(value.strip() for value in formats.split(",") if value.strip())
+        derived = derive_logo_variants(
+            registry,
+            asset_root=asset_root,
+            formats=requested_formats,
+            width=width,
+        )
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            json.dumps(
+                _registry_payload(derived, output),
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    except FileNotFoundError as exc:
+        typer.echo(f"error[input_not_found] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except (json.JSONDecodeError, ValidationError, LogoDerivativeError, ValueError) as exc:
+        typer.echo(f"error[logo_derivative] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except OSError as exc:
+        typer.echo(f"error[output_io] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    typer.echo(f"logo derivatives: {len(derived.assets) - len(registry.assets)} assets -> {output_path}")
 
 
 @app.command("wikidata-suggest")
