@@ -14,7 +14,7 @@
 - Load `../data/registry-with-logos.json` at runtime from `web/index.html`.
 - Build one card per asset and join owners by `asset.owner_id`; never hardcode logo metadata.
 - Resolve local binaries from `asset.staging_path` under `../data/assets`; never fetch a logo binary from a third-party CDN.
-- Preserve the distinction between 3,023 entities, 54 assets, 46 unique asset owners, and entities without assets.
+- Preserve the distinction between the current total entities, logo assets, unique asset owners, and entities without assets; these values are derived at runtime because enrichment is ongoing.
 - Display asset-specific rights and provenance accurately; do not imply a blanket open copyright licence.
 - Use DOM APIs and `textContent` for registry values; do not interpolate registry data through `innerHTML`.
 - Render only HTTP/HTTPS source links with `target="_blank"` and `rel="noopener noreferrer"`.
@@ -606,8 +606,8 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000/web/` and verify:
 
-- all 54 current asset cards render, including SVG, PNG, and JPEG previews;
-- the coverage line reports 3,023 entities, 54 assets, 46 entities with assets, and 2,977 without a logo;
+- all current asset cards render, including SVG, PNG, and JPEG previews;
+- the coverage line reports the current registry's entity, asset, owner, and without-logo counts;
 - search, type, country, format, rights, and reset controls update the result count;
 - rights details preserve the exact raw status and source metadata;
 - source links open in a new tab and local previews make no network request;
@@ -640,11 +640,10 @@ Add this section to `README.md`:
 ## Local logo gallery
 
 The repository includes a read-only browser gallery for the reviewed logo assets in
-`data/registry-with-logos.json`. It currently shows each committed asset, including
-multiple variants, with its owner, format, provenance, and rights note. The current
-registry has 3,023 entities but only 54 logo assets belonging to 46 entities; the
-gallery reports the remaining entities as without a logo and does not render thousands
-of empty cards.
+`data/registry-with-logos.json`. It shows each committed asset, including multiple
+variants, with its owner, format, provenance, and rights note. The registry contains
+thousands of entities but only a subset with logo assets; the gallery derives and
+reports the current counts and does not render thousands of empty cards.
 
 The gallery is not a logo-discovery or approval tool. It does not grant a licence:
 trademarks remain the property of their owners, and the current assets are displayed
