@@ -1,6 +1,7 @@
 from typer.testing import CliRunner
 
 from financial_registry.cli import app
+from financial_registry.logo_sources import LogoSourceResult
 from financial_registry.wikidata_matching import WikidataMatchResult, WikidataSuggestion
 
 
@@ -110,3 +111,57 @@ def test_wikidata_suggest_writes_review_queue(tmp_path, monkeypatch):
         '"source_uri":"https://www.wikidata.org/wiki/Q100"}],'
         '"warnings":["inst_example_wallet has no Wikidata search results for \'Example Wallet\'"]}\n'
     )
+
+
+def test_wikidata_logo_discover_requires_reviewed_mapping(tmp_path, monkeypatch):
+    mapping = tmp_path / "wikidata-mappings.json"
+    mapping.write_text(
+        '{"mappings":[{"institution_id":"inst_example_bank","qid":"Q100",'
+        '"review_status":"approved"}]}\n',
+        encoding="utf-8",
+    )
+    output = tmp_path / "wikidata-logo-candidates.json"
+
+    class FakeConnector:
+        def discover(self, institution_qids):
+            assert institution_qids == {"inst_example_bank": "Q100"}
+            return LogoSourceResult(candidates=(), warnings=("review logo",))
+
+    monkeypatch.setattr("financial_registry.cli.WikidataCommonsLogoConnector", FakeConnector)
+    result = CliRunner().invoke(
+        app,
+        [
+            "wikidata-logo-discover",
+            "data/fixtures/candidates.json",
+            str(mapping),
+            str(output),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "0 candidates" in result.stdout
+    assert output.read_text(encoding="utf-8") == '{"candidates":[],"warnings":["review logo"]}\n'
+
+
+def test_wikidata_logo_discover_fails_closed_for_unapproved_mapping(tmp_path):
+    mapping = tmp_path / "wikidata-mappings.json"
+    mapping.write_text(
+        '{"mappings":[{"institution_id":"inst_example_bank","qid":"Q100",'
+        '"review_status":"candidate"}]}\n',
+        encoding="utf-8",
+    )
+    output = tmp_path / "wikidata-logo-candidates.json"
+
+    result = CliRunner().invoke(
+        app,
+        [
+            "wikidata-logo-discover",
+            "data/fixtures/candidates.json",
+            str(mapping),
+            str(output),
+        ],
+    )
+
+    assert result.exit_code == 1
+    assert "review_status" in result.stderr
+    assert not output.exists()

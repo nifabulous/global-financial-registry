@@ -30,6 +30,7 @@ financial-registry release-build data/fixtures/candidates.json dist/release \
   --generation-commit fixture-commit
 financial-registry logo-discover data/fixtures/candidates.json dist/logo-candidates.json
 financial-registry wikidata-suggest data/fixtures/candidates.json dist/wikidata-suggestions.json
+financial-registry wikidata-logo-discover data/registry.json data/wikidata-mappings.json dist/wikidata-logo-candidates.json
 ```
 
 ### Guarantees
@@ -189,6 +190,39 @@ financial-registry wikidata-suggest \
 The output is advisory evidence only. A reviewer still needs to verify the
 country, legal identity, aliases, and current/historical status before adding a
 Q-ID to the logo-source mapping.
+
+#### Reviewed mapping allowlist
+
+After review, keep approved links in a separate mapping file. The loader fails
+closed on unknown institution IDs, invalid Q-IDs, duplicate institutions, and
+duplicate Q-IDs:
+
+```json
+{
+  "mappings": [
+    {
+      "institution_id": "inst_hsbc",
+      "qid": "Q190464",
+      "review_status": "approved",
+      "reviewed_by": "reviewer@example.com",
+      "reviewed_at": "2026-08-27T12:00:00+00:00"
+    }
+  ]
+}
+```
+
+Only records with `review_status: "approved"` are accepted. Feed that
+allowlist into the metadata-only logo connector with:
+
+```bash
+financial-registry wikidata-logo-discover \
+  data/registry.json data/wikidata-mappings.json \
+  dist/wikidata-logo-candidates.json
+```
+
+The command writes `{ "candidates": [...], "warnings": [...] }`. Candidates
+remain `source_link_only` and contain no downloaded image bytes; the existing
+rights-review workflow must approve any binary before publication.
 
 ## CI
 

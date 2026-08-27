@@ -9,7 +9,9 @@ from pydantic import ValidationError
 
 from .domain import RegistryInput
 from .logo_discovery import OfficialDomainLogoDiscovery
+from .logo_sources import WikidataCommonsLogoConnector
 from .release import ReleaseBuilder, ReleaseValidationError
+from .wikidata_mapping import load_reviewed_wikidata_mappings
 from .wikidata_matching import WikidataEntityMatcher
 
 app = typer.Typer(no_args_is_help=True)
@@ -170,6 +172,46 @@ def wikidata_suggest(
         raise typer.Exit(code=1) from exc
     typer.echo(
         f"wikidata suggestions: {len(result.suggestions)} suggestions, "
+        f"{len(result.warnings)} warnings -> {output_path}"
+    )
+
+
+@app.command("wikidata-logo-discover")
+def wikidata_logo_discover(
+    input_path: str = typer.Argument(...),
+    mapping_path: str = typer.Argument(...),
+    output_path: str = typer.Argument(...),
+) -> None:
+    """Discover Commons logo metadata for an approved Wikidata mapping file."""
+
+    try:
+        registry = _load(input_path)
+        mappings = load_reviewed_wikidata_mappings(_resolve_input_path(mapping_path), registry)
+        result = WikidataCommonsLogoConnector().discover(mappings)
+        output = Path(output_path)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        payload = {
+            "candidates": [candidate.model_dump(mode="json") for candidate in result.candidates],
+            "warnings": list(result.warnings),
+        }
+        output.write_text(
+            json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
+            encoding="utf-8",
+        )
+    except FileNotFoundError as exc:
+        typer.echo(f"error[input_not_found] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except (json.JSONDecodeError, ValidationError, ValueError) as exc:
+        typer.echo(f"error[input_invalid] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except httpx.HTTPError as exc:
+        typer.echo(f"error[wikidata_fetch] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except OSError as exc:
+        typer.echo(f"error[output_io] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    typer.echo(
+        f"wikidata logo discovery: {len(result.candidates)} candidates, "
         f"{len(result.warnings)} warnings -> {output_path}"
     )
 
