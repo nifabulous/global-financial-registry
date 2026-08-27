@@ -225,3 +225,50 @@ def test_registry_payload_relativizes_colocated_snapshots(tmp_path):
     payload = _registry_payload(registry, tmp_path / "registry.json")
 
     assert payload["source_runs"][0]["snapshot_path"] == "snapshots/demo.bin"
+
+
+def test_registry_payload_relativizes_colocated_asset_root(tmp_path):
+    registry = RegistryInput(asset_root=str(tmp_path / "assets"))
+
+    payload = _registry_payload(registry, tmp_path / "registry.json")
+
+    assert payload["asset_root"] == "assets"
+
+
+def test_logo_promote_writes_updated_registry(tmp_path, monkeypatch):
+    candidates = tmp_path / "logo-candidates.json"
+    candidates.write_text(
+        '[{"id":"asset_logo_candidate","owner_id":"inst_example_bank",'
+        '"variant":"primary","source_id":"src_regulator_gb",'
+        '"source_uri":"https://example-bank.test/logo.svg",'
+        '"rights_status":"source_link_only","review_status":"candidate"}]\n',
+        encoding="utf-8",
+    )
+    decisions = tmp_path / "logo-decisions.json"
+    decisions.write_text(
+        '{"decisions":[{"candidate_id":"asset_logo_candidate",'
+        '"review_status":"approved","rights_status":"source_link_only"}]}\n',
+        encoding="utf-8",
+    )
+    output = tmp_path / "registry-with-logos.json"
+
+    def fake_promote(registry, candidates, decisions, **kwargs):
+        assert [candidate.id for candidate in candidates] == ["asset_logo_candidate"]
+        assert [decision.candidate_id for decision in decisions] == ["asset_logo_candidate"]
+        return type("PromotionResult", (), {"registry": registry, "assets": (), "warnings": ()})()
+
+    monkeypatch.setattr("financial_registry.cli.promote_reviewed_logos", fake_promote)
+    result = CliRunner().invoke(
+        app,
+        [
+            "logo-promote",
+            "data/fixtures/candidates.json",
+            str(candidates),
+            str(decisions),
+            str(output),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "0 assets" in result.stdout
+    assert '"assets":[' in output.read_text(encoding="utf-8")

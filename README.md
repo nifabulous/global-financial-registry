@@ -32,6 +32,9 @@ financial-registry source-pilot data/registry.json \
   --snapshot-dir data/snapshots --max-records 1000 \
   --generated-at 2026-08-27T00:00:00+00:00
 financial-registry logo-discover data/fixtures/candidates.json dist/logo-candidates.json
+financial-registry logo-promote data/registry.json dist/logo-candidates.json \
+  data/logo-decisions.json data/registry-with-logos.json \
+  --asset-root data/assets
 financial-registry wikidata-suggest data/fixtures/candidates.json dist/wikidata-suggestions.json
 financial-registry wikidata-logo-discover data/registry.json data/wikidata-mappings.json dist/wikidata-logo-candidates.json
 ```
@@ -167,6 +170,49 @@ reviewed = LogoRightsReviewer().review(
 ```
 
 The reviewer requires a license URL or permission reference for `redistributable` approval, and a permission reference plus territory coverage for `licensed` approval. `source_link_only`, `unknown`, and `removed` candidates never become public binaries; only explicitly approved candidates with usable rights evidence may proceed to the existing `AssetProcessor` fetch/sanitize step. This keeps the initial global run useful as a review queue without making an unsupported trademark or copyright claim.
+
+### Promoting reviewed logos
+
+After a human has reviewed the discovery queue, keep the decisions in a separate
+JSON file. The file is an auditable allowlist: every decision names one candidate,
+the resulting review and rights states, and any evidence needed to redistribute
+the bytes.
+
+```json
+{
+  "decisions": [
+    {
+      "candidate_id": "asset_logo_candidate",
+      "review_status": "approved",
+      "rights_status": "redistributable",
+      "license_name": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "reviewed_by": "reviewer@example.com",
+      "reviewed_at": "2026-08-27T12:00:00+00:00"
+    }
+  ]
+}
+```
+
+Apply the decisions with the bounded, policy-controlled fetcher:
+
+```bash
+financial-registry logo-promote \
+  data/registry.json \
+  dist/logo-candidates.json \
+  data/logo-decisions.json \
+  data/registry-with-logos.json \
+  --asset-root data/assets
+```
+
+Approved `redistributable` and `licensed` candidates are fetched over HTTPS with
+DNS and redirect checks, sanitized, hashed, and staged under `asset_root/logos/`.
+The updated registry points to the staged binary and retains the rights evidence.
+An approved `source_link_only` decision emits metadata and the source URL only;
+it never downloads or writes a public binary. Candidates without a decision, or
+with a non-approved decision, remain out of the asset list and are reported as
+warnings. The command fails closed on unknown candidate IDs, duplicate decisions,
+missing registry provenance, unsupported formats, and insufficient rights evidence.
 
 ### Wikidata and Wikimedia Commons metadata
 

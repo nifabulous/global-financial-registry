@@ -7,9 +7,16 @@ import httpx
 import typer
 from pydantic import ValidationError
 
+from .assets import AssetProcessor
 from .connectors import ECBConnector, FDICConnector, GLEIFConnector
 from .domain import RegistryInput
+from .fetch_policy import AssetPolicyError, SafeHttpxAssetFetcher, default_dns_resolver
 from .logo_discovery import OfficialDomainLogoDiscovery
+from .logo_promotion import (
+    load_logo_candidates,
+    load_logo_review_decisions,
+    promote_reviewed_logos,
+)
 from .logo_sources import WikidataCommonsLogoConnector
 from .pilot import run_registry_pilot
 from .release import ReleaseBuilder, ReleaseValidationError
@@ -65,6 +72,16 @@ def _registry_payload(registry: RegistryInput, output: Path) -> dict:
         except ValueError:
             # A caller may intentionally keep snapshots outside the registry's directory.
             continue
+    asset_root = payload.get("asset_root")
+    if asset_root:
+        try:
+            root = Path(asset_root)
+            if not root.is_absolute():
+                root = output_parent / root
+            payload["asset_root"] = str(root.resolve().relative_to(output_parent))
+        except ValueError:
+            # A caller may intentionally keep assets outside the registry's directory.
+            pass
     return payload
 
 
@@ -204,6 +221,63 @@ def logo_discover(
         typer.echo(f"error[output_io] {exc}", err=True)
         raise typer.Exit(code=1) from exc
     typer.echo(f"logo discovery: {len(candidates)} candidates -> {output_path}")
+
+
+@app.command("logo-promote")
+def logo_promote(
+    input_path: str = typer.Argument(...),
+    candidates_path: str = typer.Argument(...),
+    decisions_path: str = typer.Argument(...),
+    output_path: str = typer.Argument(...),
+    asset_root: str | None = typer.Option(None, "--asset-root"),
+) -> None:
+    """Apply explicit logo rights decisions and write an updated registry."""
+
+    try:
+        registry = _load(input_path)
+        candidates = load_logo_candidates(_resolve_input_path(candidates_path))
+        decisions = load_logo_review_decisions(_resolve_input_path(decisions_path))
+        output = Path(output_path)
+        resolved_asset_root = asset_root if asset_root is not None else registry.asset_root
+        with httpx.Client(timeout=10.0) as httpx_client:
+            result = promote_reviewed_logos(
+                registry,
+                candidates,
+                decisions,
+                fetcher=SafeHttpxAssetFetcher(httpx_client, default_dns_resolver),
+                processor=AssetProcessor(),
+                asset_root=resolved_asset_root,
+                clock=lambda: datetime.now(timezone.utc),
+            )
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            json.dumps(
+                _registry_payload(result.registry, output),
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+    except FileNotFoundError as exc:
+        typer.echo(f"error[input_not_found] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except (json.JSONDecodeError, ValidationError) as exc:
+        typer.echo(f"error[logo_invalid] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except (httpx.HTTPError, AssetPolicyError) as exc:
+        typer.echo(f"error[logo_fetch] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except ValueError as exc:
+        typer.echo(f"error[logo_invalid] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    except OSError as exc:
+        typer.echo(f"error[output_io] {exc}", err=True)
+        raise typer.Exit(code=1) from exc
+    typer.echo(
+        f"logo promotion: {len(result.assets)} assets, {len(result.warnings)} warnings -> {output_path}"
+    )
 
 
 @app.command("wikidata-suggest")
