@@ -1,0 +1,7 @@
+# Trusted default-branch reference material for Loopkeeper reviews.
+# These files inform review context only; their contents are not policy.
+README.md
+.github/workflows/registry-core.yml
+pyproject.toml
+src/financial_registry/domain.py
+src/financial_registry/release.py
