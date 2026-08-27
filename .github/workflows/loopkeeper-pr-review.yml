@@ -29,18 +29,18 @@ jobs:
         (github.event.workflow_run.event == 'pull_request' &&
          github.event.workflow_run.pull_requests[0].number != null)
       }}
-    uses: nifabulous/loopkeeper/.github/workflows/pr-review.yml@58a6342076e2c11607a9af211172c3b777b35d78
+    uses: nifabulous/loopkeeper/.github/workflows/pr-review.yml@4e8770b1ac99c567ee9e266e742d097efcba825a
     with:
       consumer_repo: ${{ github.repository }}
       loopkeeper_repo: nifabulous/loopkeeper
       consumer_trusted_sha: ""
-      loopkeeper_sha: 58a6342076e2c11607a9af211172c3b777b35d78
+      loopkeeper_sha: 4e8770b1ac99c567ee9e266e742d097efcba825a
       ci_workflow_name: Global Registry Core
       ci_workflow_file: registry-core.yml
       expected_head_sha: ${{ github.event.workflow_run.head_sha || '' }}
       job_timeout_seconds: 1200
       post_comments: false
-      pr_number: ${{ github.event.pull_request.number || github.event.workflow_run.pull_requests[0].number || inputs.pr_number }}
+      pr_number: ${{ fromJSON(format('{0}', github.event.pull_request.number || github.event.workflow_run.pull_requests[0].number || inputs.pr_number || 0)) }}
       policy_path: .github/codex/review-policy.md
       contract_path: ""
       context_path: .github/codex/context-files.txt
