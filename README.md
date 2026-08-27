@@ -142,6 +142,20 @@ reviewed = LogoRightsReviewer().review(
 
 The reviewer requires a license URL or permission reference for `redistributable` approval, and a permission reference plus territory coverage for `licensed` approval. `source_link_only`, `unknown`, and `removed` candidates never become public binaries; only explicitly approved candidates with usable rights evidence may proceed to the existing `AssetProcessor` fetch/sanitize step. This keeps the initial global run useful as a review queue without making an unsupported trademark or copyright claim.
 
+### Wikidata and Wikimedia Commons metadata
+
+`WikidataCommonsLogoConnector` is a secondary, metadata-only source. It accepts an explicit institution-to-Wikidata mapping, reads the [logo image (P154)](https://www.wikidata.org/wiki/Property:P154) claim, and asks the [Commons imageinfo API](https://www.mediawiki.org/wiki/API:Imageinfo) for the file URL, license fields, and attribution. It never requests the image URL itself. Commons license metadata is retained as evidence, but the resulting candidate is still `source_link_only` until reviewed.
+
+```python
+from financial_registry.logo_sources import WikidataCommonsLogoConnector
+
+result = WikidataCommonsLogoConnector().discover({
+    "inst_example_bank": "Q123456",
+})
+for candidate in result.candidates:
+    print(candidate.source_uri, candidate.license_name, candidate.attribution_text)
+```
+
 ## CI
 
 Standalone workflow `.github/workflows/registry-core.yml` runs on Python 3.10-3.12, installs `global-financial-registry[dev]`, runs `ruff`, `pytest`, and coverage (85% threshold) without importing the Relay application.
