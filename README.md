@@ -29,6 +29,7 @@ financial-registry release-build data/fixtures/candidates.json dist/release \
   --generated-at 2026-08-26T00:00:00+00:00 \
   --generation-commit fixture-commit
 financial-registry logo-discover data/fixtures/candidates.json dist/logo-candidates.json
+financial-registry wikidata-suggest data/fixtures/candidates.json dist/wikidata-suggestions.json
 ```
 
 ### Guarantees
@@ -155,6 +156,39 @@ result = WikidataCommonsLogoConnector().discover({
 for candidate in result.candidates:
     print(candidate.source_uri, candidate.license_name, candidate.attribution_text)
 ```
+
+#### Wikidata entity matching queue
+
+Name search is useful for finding possible entities, but it is not safe as an
+automatic identity link: banks reuse names across countries, subsidiaries, and
+historical entities. `WikidataEntityMatcher` calls Wikidata's
+[`wbsearchentities` API](https://www.wikidata.org/w/api.php?action=help&modules=wbsearchentities)
+and emits ranked Q-ID suggestions with the returned label, description, exact
+label-match flag, and source URI. It never writes an institution-to-Q-ID
+mapping. Review the queue and promote only confirmed pairs into the explicit
+mapping accepted by `WikidataCommonsLogoConnector`.
+
+```python
+from financial_registry.wikidata_matching import WikidataEntityMatcher
+
+result = WikidataEntityMatcher(max_results=5).suggest(registry.institutions)
+for suggestion in result.suggestions:
+    print(suggestion.institution_id, suggestion.qid, suggestion.label, suggestion.description)
+for warning in result.warnings:
+    print("review:", warning)
+```
+
+The equivalent CLI command writes deterministic JSON for a review workflow:
+
+```bash
+financial-registry wikidata-suggest \
+  data/fixtures/candidates.json dist/wikidata-suggestions.json \
+  --max-results 5
+```
+
+The output is advisory evidence only. A reviewer still needs to verify the
+country, legal identity, aliases, and current/historical status before adding a
+Q-ID to the logo-source mapping.
 
 ## CI
 
