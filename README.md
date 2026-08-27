@@ -116,7 +116,7 @@ report = assembler.assemble_with_report(gleif_candidates + fdic_candidates + ecb
 registry = report.registry
 ```
 
-The first live pilot is intentionally not a global coverage release: it combines a bounded FDIC sample, its matching GLEIF records, and the current ECB workbook. It creates a valid metadata release, but it contains no logo binaries until the logo rights workflow is completed.
+The first live pilot is intentionally not a global coverage release: it combines a bounded FDIC sample, its matching GLEIF records, and the current ECB workbook. `data/registry.json` is the metadata-only baseline; the separate `data/registry-with-logos.json` output contains the first reviewed logo sample.
 
 ### Bounded source pilot
 
@@ -215,6 +215,16 @@ it never downloads or writes a public binary. Candidates without a decision, or
 with a non-approved decision, remain out of the asset list and are reported as
 warnings. The command fails closed on unknown candidate IDs, duplicate decisions,
 missing registry provenance, unsupported formats, and insufficient rights evidence.
+
+The checked-in logo pilot (`data/logo-candidates-simple-icons.json` and
+`data/logo-decisions.json`) promotes nine pinned Simple Icons v16.21.0 SVGs for
+Bank of America, Chase, Wells Fargo, Deutsche Bank, Commerzbank, CaixaBank,
+HSBC, Barclays, and Goldman Sachs. They are published as `nominative_use`, not
+as open-licensed artwork: the source version and [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
+are retained with each asset, and downstream use is limited to identifying the
+corresponding institution without implying endorsement or affiliation. The
+derived registry and staged binaries are in `data/registry-with-logos.json` and
+`data/assets/logos/`.
 
 `nominative_use` is intended for an upstream source that documents this narrow
 identification-only basis—for example, the [`logos-bancos-br`](https://github.com/rzmt/logos-bancos-br)

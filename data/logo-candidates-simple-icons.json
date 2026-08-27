@@ -1,0 +1,110 @@
+[
+  {
+    "id": "asset_c319cd1c96c458708d3de4d342f72534",
+    "owner_id": "inst_096a406e4d1155b0b6b73ff8ea1e046b",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/bankofamerica.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_f1c8e80195dc5cbd9649b95da983f314",
+    "owner_id": "inst_12f65249faca5cfdaca407f79dbc0073",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/chase.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_b4bf385565b5530c939c4e24df54f57b",
+    "owner_id": "inst_dbb07f8431145ebab7775cd5381d783e",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/wellsfargo.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_93a1021bc9305e18b8bbd7c9a8d0d2d3",
+    "owner_id": "inst_b04b77300b1b55cd9ee06dd6cb94f67e",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/deutschebank.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_8e86683dc36d507889766c090e4c2c0e",
+    "owner_id": "inst_37dbc833d04056ae8bd11c662d8c2aa2",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/commerzbank.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_7de5ee4b91cb5abea03515a5b84713fb",
+    "owner_id": "inst_b5c97e12f4f650f2b7aa56efc94a5149",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/caixabank.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_c6c94819e21f55f488bd45bbe9186f92",
+    "owner_id": "inst_509ed15664b455a084e7d688c818b340",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/hsbc.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_d56316d21fdc56199a89de221c7dfbff",
+    "owner_id": "inst_04af9fac29b851ad82efd88cb533cef1",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/barclays.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  },
+  {
+    "id": "asset_9281fe9a90265004b75bc19412bbeaa7",
+    "owner_id": "inst_19c79c870a375f3e95d5cd5ded8b8511",
+    "variant": "primary",
+    "source_id": "src_simple_icons",
+    "source_uri": "https://cdn.jsdelivr.net/npm/simple-icons@16.21.0/icons/goldmansachs.svg",
+    "rights_status": "source_link_only",
+    "review_status": "candidate",
+    "discovery_method": "simple_icons_curated_mapping",
+    "confidence": 0.95,
+    "rights_note": "Simple Icons v16.21.0 source; individual icon licence is not asserted. Candidate is retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md."
+  }
+]
