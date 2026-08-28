@@ -1,0 +1,580 @@
+{
+  "decisions": [
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_0271331b0725584d9b13b6605a74a914",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (peoplesbancorp.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_0a4a8e97d455533bbc626e5d24791f69",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (pioneerbks.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_166f9609f47e5ddaac8cd4afbd912df8",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (shoreunitedbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_1a9f744e48bc567eab00ba84da2792d2",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbsc.com) and normalized institution-name match (similarity 0.94) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_21acb22b5c85529fb84e08489a4992e0",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (unionstate.net) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_23989180023a5a9db93459f65a7e6f8b",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (accessunited.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_24d35c683dd95652865ca4c0dcccb2bb",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (mct.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_282836f92b4655baa6ea4193df0c5f3d",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (unitedbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_28f1c420ec9953e585057803508fa839",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (1stnorthern.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_2b7c09bf3ad25e08a30c8b0617de226a",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (nextierbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_32a9d63e7aab53bda6ca97ab7d27d33e",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (ngbank.com) and normalized institution-name match (similarity 0.97) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_330bcd1885c25a51a03542a5e3fe269c",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (centralstatebank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_345bee0e4ac955748a9ce47c0ac2018e",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (grotonbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_38009facbc0d5a61b30ea9b1155936d5",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (nbmvt.com) and normalized institution-name match (similarity 0.96) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_3f7e6b501bae5031b9ed5e7faf533b8d",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (cnbsomerset.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_406b60d7794d515c8293244eadf40d0e",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (univest.net) and normalized institution-name match (similarity 0.90) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_40791d3f0b57541eace88841ba3e7f9a",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (first-national.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_473779d59e8553caac756e0bb0078442",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (ttnb.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_481c50b4d6285e4da038473c68cd6d5a",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (bankofvernon.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_4bbf6840ab345825808c8041d6a50759",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (peoplesbanknc.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_4d68969da6c95922a25f0886627db46a",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (farmersbankgroup.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_5514e27680a35990903dc4e2f3194dc3",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (cnbohio.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_5807b05387285651bb1c11e86e140364",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbhartford.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_5be6fd38395f5c169905d31b3b47bd24",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (farmersstateonline.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_6051947c997552a0bac8d219b0ebd881",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fbvirginia.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_60c1b5e6a2a258328b3706c35b11016d",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (centurybankandtrust.com) and normalized institution-name match (similarity 0.90) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_67e8d9c9858d58b7a9e809e052330677",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fmb1919.bank) and normalized institution-name match (similarity 0.92) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_6b3c2fbcdf755367911ddf1eb5189c86",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbmbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_6d62627aae875c8ba69f5aa4288ee7e6",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (drydenbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_70913ac199695982abb2f15bfb9c817f",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (nbbank.com) and normalized institution-name match (similarity 0.91) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_71f2d2711d605085884d6cd5fe5993ee",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (bankatfirst.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_736fbe1b2e6c5c7291de0a1366934197",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbtoday.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_771efcd402eb53e993aeda72f6558deb",
+      "review_status": "rejected",
+      "reviewed_at": "2026-08-28T04:19:12Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Not materialized: the pinned upstream SVG is 1,276,154 bytes, above this registry processor's 1 MiB SVG safety limit. Re-review only after an equivalent safe source or explicitly approved optimized representation is available.",
+      "rights_status": "source_link_only"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_87d87df1db035fb582b77df51eb9e5ef",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (qnbtrust.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_8b660d0a33455c6e8cab231eac0d5a26",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbandt.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_90ce0d0d637f514ba072049fb8b4fd11",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (hydencitizensbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_96eae254161c57309329baa99004ece3",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (cvnb.com) and normalized institution-name match (similarity 0.94) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_97d48871ed715acba800d6218889fe83",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbgermantown.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_9d6539d2e58e5f61aaaf45e35d13ad41",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (cbna.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_a46ee93f60c95ed797a51fe4c363e7bc",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (yourfnbonline.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_a63d56001b8c5c1d8785d66bafcdfe6e",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (dnbd.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_ad1c93b024365e44bf74b67046d00553",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbblanchester.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_b092692f2b655162b321ceac9f2cc5cc",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (1stnatbk.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_b0cb461c36dd5ca9a079d7f80850622f",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (mountainvalleybank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_b72f5010873f559ebc167539e04e3cb4",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fmb.net) and normalized institution-name match (similarity 0.92) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_bad6abffaea55f679c76278718f63d0e",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (psbt.com) and normalized institution-name match (similarity 0.95) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_bfd534add777578bacd1f1086050e2dd",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (citizensbankrb.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_c3ad4a33679e58638744ddddab4e6018",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (traditionalbank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_c424bfa42f935a0caa0298a502733556",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (elmerbank.com) and normalized institution-name match (similarity 0.92) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_c46abad759f455a889b58a07faabd341",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (statestreet.com) and normalized institution-name match (similarity 0.92) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_c89025294fee565d90122c3bcb48b62c",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (merchantsandcitizensbank.com) and normalized institution-name match (similarity 0.92) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_cc2a00507ac65e21a666849ce09bb372",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (pioneercommunitybank.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_d585c485d79b5f59870a191babbe5a24",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (merchantsnat.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_d6cbf111fdbf50f7b01603684f3862e9",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (adirondacktrust.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_e2815589b1885cb4a234318a77740f74",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (exch.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_e44f12da355a5a30ad8ce7c97029f86b",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (camdennational.bank) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_e5e7fa9a9e5e5e6d87c94c723e5efe41",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (farmbk.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_e6815733c9e65d18848d8441f0945a89",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (hnbbank.bank) and normalized institution-name match (similarity 0.91) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_e6a34dcf16ca5bd18556138e83ef7c87",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (thefirst.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_ec3cda7a6d33581fa90ede702ba2ad86",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (fnbfirst.com) and normalized institution-name match (similarity 0.94) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_ec61cc0d32475e2eb7e842c4a2a3d4f7",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (bankwithlnb.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_f6abf092237e566885901c9e3c929fca",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (usbank.com) and normalized institution-name match (similarity 0.93) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_f7d334cb239f5e968e3f3c8ee56714c9",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (exba.com) and normalized institution-name match (exact) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    },
+    {
+      "attribution_text": "College-Canine financial contributors; bank trademark remains the property of its respective owner.",
+      "candidate_id": "asset_fc215da2c802528083af122f93c91e39",
+      "review_status": "approved",
+      "reviewed_at": "2026-08-28T04:10:10Z",
+      "reviewed_by": "registry-maintainers",
+      "rights_note": "Candidate mirrored from College-Canine/financial at commit c4968375d4a4adeafec84ba6f9d8b1d42fcd1567. Exact official-domain match (jvbonline.com) and normalized institution-name match (similarity 0.90) used for selection. The upstream MIT licence covers repository code and packaging, not bank artwork or trademarks. Retained for nominative identification only; no endorsement or affiliation implied. See https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/license.md and https://github.com/College-Canine/financial/blob/c4968375d4a4adeafec84ba6f9d8b1d42fcd1567/readme.md.",
+      "rights_status": "nominative_use"
+    }
+  ]
+}

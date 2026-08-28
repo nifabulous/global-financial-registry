@@ -284,15 +284,32 @@ queues are retained in `data/logo-candidates-college-canine-financial.json`
 and `data/logo-decisions-college-canine-financial.json`, with the pinned source
 snapshot under `data/snapshots/src_college_canine_financial/`.
 
-The derived registry currently contains 2,537 binary assets (630 SVG, 645 PNG,
-630 WebP, and 632 JPEG), including 1,890 generated raster derivatives. All
+This follow-on batch adds 63 more College-Canine institution marks using the
+same exact official-domain plus normalized-name evidence (64 candidates were
+reviewed; one oversized `mtb.svg` candidate was rejected by the 1 MiB SVG
+safety limit), and 112 canonical bank marks from the pinned
+[`hafidznoor/idn-finlogos`](https://github.com/hafidznoor/idn-finlogos) catalog.
+The new queues are retained in
+`data/logo-candidates-college-canine-domain-expansion.json`,
+`data/logo-decisions-college-canine-domain-expansion.json`,
+`data/logo-candidates-idn-finlogos.json`, and
+`data/logo-decisions-idn-finlogos.json`. Source-provided alternate, old, and
+vertical IDN lockups are intentionally reserved for a future semantic-variant
+pass.
+
+The derived registry currently contains 3,237 binary assets (805 SVG, 820 PNG,
+805 WebP, and 807 JPEG), including 2,415 generated raster derivatives. All
 new source marks are explicitly reviewed as `nominative_use`, not as
 open-licensed artwork. Source versions, source URLs, hashes, review decisions,
 and upstream legal notices are retained with each asset;
 the [Simple Icons disclaimer](https://github.com/simple-icons/simple-icons/blob/develop/DISCLAIMER.md)
 is retained alongside the pinned Simple Icons assets;
 the Auraveni, ICongo, and College-Canine MIT licences are treated as applying
-to repository code and packaging, not to the bank artwork or trademarks.
+to repository code and packaging, not to the bank artwork or trademarks. The
+idn-finlogos build tooling is MIT-licensed, while its SVG assets are explicitly
+CC BY-NC 4.0; commercial use of those marks requires permission from the
+relevant trademark holder, so the registry records that licence and publishes
+the assets only for nominative identification.
 Generated PNG, WebP, and JPEG files are compatibility derivatives of reviewed
 SVGs; they do not assert a separate artwork licence or create additional
 semantic variants. Downstream use is limited to identifying the corresponding
