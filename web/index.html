@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Local visual catalogue of the global financial registry logo assets.">
+    <title>Global Financial Registry | Logo gallery</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("gfr-gallery-theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch {
+          // System theme remains the safe fallback when storage is unavailable.
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#gallery-content">Skip to logo gallery</a>
+    <header class="site-header">
+      <p class="eyebrow">Global Financial Registry</p>
+      <h1>Logo gallery</h1>
+      <p class="lede">A local review surface for the logo assets currently present in the registry.</p>
+      <div class="theme-control">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select" aria-describedby="theme-hint">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <span id="theme-hint" class="visually-hidden">System follows your device appearance.</span>
+      </div>
+      <p class="rights-notice">
+        Logos and trademarks remain the property of their respective owners. Assets are shown for identification;
+        no blanket open copyright licence is asserted. See the <a href="../README.md#license">repository licensing policy</a> for details.
+      </p>
+      <div class="coverage-summary" id="coverage-summary" aria-label="Registry coverage" hidden>
+        <div><strong id="entity-count">0</strong><span>entities</span></div>
+        <div><strong id="asset-count">0</strong><span>logo assets</span></div>
+        <div><strong id="owner-count">0</strong><span>entities with assets</span></div>
+        <div><strong id="missing-count">0</strong><span>without a logo</span></div>
+      </div>
+    </header>
+
+    <main id="gallery-content" class="gallery-main">
+      <section class="toolbar" aria-labelledby="filter-heading">
+        <div class="section-heading">
+          <p class="eyebrow">Find an asset</p>
+          <h2 id="filter-heading">Search and filter</h2>
+        </div>
+        <div class="filter-grid">
+          <label class="filter-control filter-control--search" for="search-input">
+            Search name or country
+            <input id="search-input" type="search" autocomplete="off" placeholder="e.g. Nubank or US">
+          </label>
+          <label class="filter-control" for="entity-type-filter">
+            Entity type
+            <select id="entity-type-filter">
+              <option value="all">All types</option>
+              <option value="institution">Institutions</option>
+              <option value="brand">Brands</option>
+              <option value="unknown">Unknown owners</option>
+            </select>
+          </label>
+          <label class="filter-control" for="country-filter">
+            Country
+            <select id="country-filter"><option value="all">All countries</option></select>
+          </label>
+          <label class="filter-control" for="format-filter">
+            Format
+            <select id="format-filter">
+              <option value="all">All formats</option>
+              <option value="svg">SVG</option>
+              <option value="png">PNG</option>
+              <option value="jpg">JPEG</option>
+              <option value="webp">WEBP</option>
+            </select>
+          </label>
+          <label class="filter-control" for="rights-filter">
+            Rights status
+            <select id="rights-filter"><option value="all">All rights states</option></select>
+          </label>
+          <button id="reset-filters" class="button button--secondary" type="button">Reset filters</button>
+        </div>
+      </section>
+
+      <section class="results" aria-labelledby="results-heading">
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">Current view</p>
+            <h2 id="results-heading">Logo assets</h2>
+          </div>
+          <p id="result-status" class="result-status" role="status" aria-live="polite">Loading logo registry</p>
+        </div>
+        <div id="partial-warning" class="state state--warning" role="status" hidden></div>
+        <div id="fatal-state" class="state state--error" role="alert" hidden></div>
+        <div id="empty-state" class="state state--empty" hidden>
+          <h3>No logo assets match these filters</h3>
+          <p>Try a broader search or reset the filters to return to the full gallery.</p>
+          <button class="button" type="button" data-reset-filters>Reset filters</button>
+        </div>
+        <div id="loading-state" class="logo-grid logo-grid--loading" aria-label="Loading logo previews">
+          <div class="loading-card" aria-hidden="true"></div>
+          <div class="loading-card" aria-hidden="true"></div>
+          <div class="loading-card" aria-hidden="true"></div>
+          <div class="loading-card" aria-hidden="true"></div>
+          <div class="loading-card" aria-hidden="true"></div>
+          <div class="loading-card" aria-hidden="true"></div>
+        </div>
+        <div id="logo-grid" class="logo-grid" role="list" hidden></div>
+        <button id="load-more" class="button button--secondary load-more" type="button" hidden>Load more logos</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Read-only local viewer. Registry data and rights decisions remain in the curated release workflow.</p>
+    </footer>
+  </body>
+</html>

@@ -15,6 +15,55 @@ python -m pytest -q
 financial-registry --help
 ```
 
+## Local logo gallery
+
+The repository includes a read-only browser gallery for the reviewed logo assets in
+`data/gallery.json`, a generated projection of `data/registry-with-logos.json`. It shows each committed asset, including multiple
+variants, with its owner, format, provenance, and rights note. The registry contains
+thousands of entities but only a subset with logo assets; the gallery derives and
+reports the current counts and does not render thousands of empty cards.
+
+The gallery is not a logo-discovery or approval tool. It does not grant a licence:
+trademarks remain the property of their owners, and the current assets are displayed
+for identification under the per-asset rights decisions recorded in the registry.
+
+Serve the repository root over HTTP because browsers restrict `fetch()` from a
+`file://` page:
+
+```bash
+python3 -m http.server 8000
+```
+
+Open <http://localhost:8000/web/>.
+
+Use the Theme selector to follow your system preference or choose a persistent Light/Dark override.
+
+Regenerate and verify the lightweight gallery projection after changing the registry:
+
+```bash
+python scripts/build_gallery_data.py --write \
+  data/registry-with-logos.json data/gallery.json
+python scripts/build_gallery_data.py \
+  data/registry-with-logos.json data/gallery.json
+```
+
+### Reviewable logo corpus manifest
+
+`data/logo-manifest.json` is a deterministic, machine-checkable index of every
+committed logo binary. Each entry links the asset ID to its owner, source,
+rights/review state, public path, byte length, and SHA-256 digest. Regenerate it
+after a registry update with:
+
+```bash
+python scripts/check_logo_manifest.py --write \
+  data/registry-with-logos.json data/logo-manifest.json
+python scripts/check_logo_manifest.py \
+  data/registry-with-logos.json data/logo-manifest.json
+```
+
+The second command is also enforced in CI, so a registry, binary, or linkage
+change cannot merge without updating the review artifact.
+
 ## Release contract
 
 The release bundle is the source of truth; no mutable database is introduced. All published dates are timezone-aware UTC, release versions are SemVer 2.0.0, and JSON is deterministic (UTF-8, sorted keys, stable list ordering, trailing newline).
