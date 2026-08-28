@@ -36,6 +36,8 @@ python3 -m http.server 8000
 
 Open <http://localhost:8000/web/>.
 
+Use the Theme selector to follow your system preference or choose a persistent Light/Dark override.
+
 ### Reviewable logo corpus manifest
 
 `data/logo-manifest.json` is a deterministic, machine-checkable index of every
