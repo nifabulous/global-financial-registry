@@ -451,4 +451,3 @@ Serve the gallery with `python3 -m http.server 8123`, open `http://127.0.0.1:812
 git add .github/workflows/registry-core.yml README.md
 git commit -m "test: cover gallery theme behavior in CI"
 ```
-
