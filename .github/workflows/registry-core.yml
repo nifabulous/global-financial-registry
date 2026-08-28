@@ -25,3 +25,5 @@ jobs:
       - run: pip install -e '.[dev]'
       - run: ruff check src tests
       - run: python -m pytest --cov=financial_registry --cov-fail-under=85 -q
+      - run: node --test web/gallery-core.test.mjs
+      - run: python scripts/check_logo_manifest.py data/registry-with-logos.json data/logo-manifest.json
