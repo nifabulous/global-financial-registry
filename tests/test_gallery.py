@@ -8,6 +8,7 @@ INDEX_PATH = ROOT / "web" / "index.html"
 APP_PATH = ROOT / "web" / "app.js"
 CORE_PATH = ROOT / "web" / "gallery-core.js"
 STYLES_PATH = ROOT / "web" / "styles.css"
+THEME_PATH = ROOT / "web" / "theme.js"
 
 
 def load_registry() -> dict:
@@ -20,6 +21,7 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
 
     assert INDEX_PATH.is_file()
     assert STYLES_PATH.is_file()
+    assert THEME_PATH.is_file()
     assert '<script type="module" src="app.js"></script>' in index
     assert '<link rel="stylesheet" href="styles.css">' in index
     assert 'href="#gallery-content"' in index
@@ -31,6 +33,12 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
     assert 'id="format-filter"' in index
     assert 'id="rights-filter"' in index
     assert 'id="reset-filters"' in index
+    assert 'id="theme-select"' in index
+    assert 'value="system"' in index
+    assert 'value="light"' in index
+    assert 'value="dark"' in index
+    assert "gfr-gallery-theme" in index
+    assert index.index("localStorage.getItem") < index.index('<link rel="stylesheet" href="styles.css">')
     assert "--color-canvas" in styles
 
 
@@ -59,6 +67,8 @@ def test_gallery_script_uses_safe_dom_and_source_url_guards() -> None:
     assert re.search(r"new URL\(", core)
     assert "noopener" in app
     assert "noopener noreferrer" in app
+    assert 'from "./theme.js"' in app
+    assert "theme-select" in app
     assert "https:" in core
     assert "http:" in core
 

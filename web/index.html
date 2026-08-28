@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Local visual catalogue of the global financial registry logo assets.">
     <title>Global Financial Registry | Logo gallery</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("gfr-gallery-theme");
+          if (saved === "light" || saved === "dark") {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch {
+          // System theme remains the safe fallback when storage is unavailable.
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="app.js"></script>
   </head>
@@ -14,6 +26,15 @@
       <p class="eyebrow">Global Financial Registry</p>
       <h1>Logo gallery</h1>
       <p class="lede">A local review surface for the logo assets currently present in the registry.</p>
+      <div class="theme-control">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select" aria-describedby="theme-hint">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+        <span id="theme-hint" class="visually-hidden">System follows your device appearance.</span>
+      </div>
       <p class="rights-notice">
         Logos and trademarks remain the property of their respective owners. Assets are shown for identification;
         no blanket open copyright licence is asserted. See the <a href="../README.md#license">repository licensing policy</a> for details.

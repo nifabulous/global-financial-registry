@@ -8,6 +8,11 @@ import {
   text,
   validateRegistry,
 } from "./gallery-core.js";
+import {
+  applyThemeAttribute,
+  readStoredTheme,
+  writeStoredTheme,
+} from "./theme.js";
 
 const REGISTRY_URL = "../data/registry-with-logos.json";
 
@@ -29,6 +34,7 @@ const elements = {
   formatFilter: document.querySelector("#format-filter"),
   rightsFilter: document.querySelector("#rights-filter"),
   resetFilters: document.querySelector("#reset-filters"),
+  themeSelect: document.querySelector("#theme-select"),
   resultStatus: document.querySelector("#result-status"),
   partialWarning: document.querySelector("#partial-warning"),
   fatalState: document.querySelector("#fatal-state"),
@@ -243,6 +249,29 @@ function resetFilters() {
   updateView();
 }
 
+function getThemeStorage() {
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
+function initializeTheme() {
+  const theme = readStoredTheme(getThemeStorage());
+  applyThemeAttribute(document.documentElement, theme);
+  if (elements.themeSelect) elements.themeSelect.value = theme;
+}
+
+function bindThemeControl() {
+  if (!elements.themeSelect) return;
+  elements.themeSelect.addEventListener("change", () => {
+    const theme = writeStoredTheme(getThemeStorage(), elements.themeSelect.value);
+    applyThemeAttribute(document.documentElement, theme);
+    elements.themeSelect.value = theme;
+  });
+}
+
 function bindControls() {
   const updateFilters = () => {
     state.filters = {
@@ -315,5 +344,7 @@ async function bootstrap() {
   }
 }
 
+initializeTheme();
+bindThemeControl();
 bindControls();
 bootstrap();
