@@ -40,6 +40,11 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
     assert "gfr-gallery-theme" in index
     assert index.index("localStorage.getItem") < index.index('<link rel="stylesheet" href="styles.css">')
     assert "--color-canvas" in styles
+    assert 'data-theme="dark"' in styles
+    assert "@media (prefers-color-scheme: dark)" in styles
+    assert "color-scheme: dark" in styles
+    assert "--color-preview" in styles
+    assert ".visually-hidden" in styles
 
 
 def test_every_registry_staging_path_resolves_to_a_local_binary() -> None:
