@@ -18,12 +18,12 @@ Give the local logo gallery an accessible, persistent theme choice without chang
 ## Theme state and data flow
 
 1. A small `web/theme.js` module owns the supported values, normalization, system-resolution, storage, and document-attribute helpers.
-2. The app reads the saved value, normalizes unknown values to `system`, and initializes the selector.
-3. Selecting a value writes the normalized value to `localStorage`, updates the document theme attribute for explicit overrides, and removes the attribute for `system`.
+2. The app reads the saved value, normalizes unknown values to `system`, and initializes the selector. Values are normalized before they are stored or used as DOM attributes.
+3. Selecting a value writes the normalized value to `localStorage`, updates the document theme attribute for explicit overrides, and removes the attribute for `system`. If storage is unavailable or throws, the current-session selection still applies and the app falls back to system behavior on a later visit.
 4. CSS uses the existing custom-property palette. Light remains the default; a dark media-query palette applies when no explicit attribute is present and the system is dark. Explicit `data-theme="light"` or `data-theme="dark"` overrides the media preference.
 5. A small guarded head script applies an explicit saved override before the stylesheet paints, preventing a visible light-to-dark flash. Storage failures fall back to system behavior.
 
-The theme is presentation state only. It must never alter registry data, asset URLs, rights labels, or filtering semantics.
+The theme is presentation state only. It must never alter registry data, asset URLs, rights labels, or filtering semantics. While `System` is active, a live operating-system preference change updates the palette through the media query without changing the selector value; explicit Light and Dark overrides remain stable.
 
 ## Visual tokens
 
@@ -37,10 +37,10 @@ The existing spacing, typography, card layout, focus ring, and responsive breakp
 
 ## Testing and acceptance
 
-- Add `web/theme.test.mjs` tests for supported-value normalization, system preference resolution, explicit attribute mapping, and storage round trips using a small fake storage object.
+- Add `web/theme.test.mjs` tests for supported-value normalization, system preference resolution, explicit attribute mapping, storage round trips using a small fake storage object, and read/write failures that must not escape to the UI.
 - Add gallery contract assertions for the theme control, early initialization hook, and stylesheet theme selectors.
 - Run the existing Python suite, coverage gate, Ruff, registry/manifest validation, Node gallery tests, and new theme tests.
-- Manually verify System, Light, and Dark in a local server, including reload persistence, keyboard operation, focus visibility, form-control contrast, and reduced-motion behavior.
+- Manually verify System, Light, and Dark in a local server, including reload persistence, live system-preference changes, keyboard operation, focus visibility, form-control contrast, and reduced-motion behavior.
 
 ## Boundaries
 
