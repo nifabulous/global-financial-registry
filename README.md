@@ -297,8 +297,20 @@ The new queues are retained in
 vertical IDN lockups are intentionally reserved for a future semantic-variant
 pass.
 
-The derived registry currently contains 3,237 binary assets (805 SVG, 820 PNG,
-805 WebP, and 807 JPEG), including 2,415 generated raster derivatives. All
+The latest variant pass adds 81 usable semantic variants from the pinned
+[`praveenpuglia/indian-banks`](https://github.com/praveenpuglia/indian-banks)
+catalog: 40 `wordmark` and 41 `mark` assets for 41 Indian banks. One Ujjivan
+wordmark candidate was retained in the review queue but rejected from binary
+promotion because its SVG viewBox exceeds the registry's safe rendering limit.
+The candidate and decision queues are retained in
+`data/logo-candidates-praveenpuglia-indian-banks.json` and
+`data/logo-decisions-praveenpuglia-indian-banks.json`, with the pinned source
+snapshot under `data/snapshots/src_praveenpuglia_indian_banks/`. The source
+README documents official-listing provenance but does not grant an artwork
+licence; these marks are therefore retained only for nominative identification.
+
+The derived registry currently contains 3,561 binary assets (886 SVG, 901 PNG,
+886 WebP, and 888 JPEG), including 2,658 generated raster derivatives. All
 new source marks are explicitly reviewed as `nominative_use`, not as
 open-licensed artwork. Source versions, source URLs, hashes, review decisions,
 and upstream legal notices are retained with each asset;
