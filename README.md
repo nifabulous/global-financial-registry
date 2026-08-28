@@ -36,6 +36,23 @@ python3 -m http.server 8000
 
 Open <http://localhost:8000/web/>.
 
+### Reviewable logo corpus manifest
+
+`data/logo-manifest.json` is a deterministic, machine-checkable index of every
+committed logo binary. Each entry links the asset ID to its owner, source,
+rights/review state, public path, byte length, and SHA-256 digest. Regenerate it
+after a registry update with:
+
+```bash
+python scripts/check_logo_manifest.py --write \
+  data/registry-with-logos.json data/logo-manifest.json
+python scripts/check_logo_manifest.py \
+  data/registry-with-logos.json data/logo-manifest.json
+```
+
+The second command is also enforced in CI, so a registry, binary, or linkage
+change cannot merge without updating the review artifact.
+
 ## Release contract
 
 The release bundle is the source of truth; no mutable database is introduced. All published dates are timezone-aware UTC, release versions are SemVer 2.0.0, and JSON is deterministic (UTF-8, sorted keys, stable list ordering, trailing newline).

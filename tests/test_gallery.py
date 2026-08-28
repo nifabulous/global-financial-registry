@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "data" / "registry-with-logos.json"
 INDEX_PATH = ROOT / "web" / "index.html"
 APP_PATH = ROOT / "web" / "app.js"
+CORE_PATH = ROOT / "web" / "gallery-core.js"
 STYLES_PATH = ROOT / "web" / "styles.css"
 
 
@@ -48,16 +49,18 @@ def test_every_registry_staging_path_resolves_to_a_local_binary() -> None:
 
 def test_gallery_script_uses_safe_dom_and_source_url_guards() -> None:
     app = APP_PATH.read_text(encoding="utf-8")
+    core = CORE_PATH.read_text(encoding="utf-8")
 
     assert APP_PATH.is_file()
+    assert CORE_PATH.is_file()
     assert "../data/registry-with-logos.json" in app
     assert "textContent" in app
     assert "innerHTML" not in app
-    assert re.search(r"new URL\(", app)
+    assert re.search(r"new URL\(", core)
     assert "noopener" in app
     assert "noopener noreferrer" in app
-    assert "https:" in app
-    assert "http:" in app
+    assert "https:" in core
+    assert "http:" in core
 
 
 def test_gallery_copy_explains_scope_and_rights() -> None:
