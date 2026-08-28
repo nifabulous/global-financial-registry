@@ -2,24 +2,29 @@ import {
   applyFilters,
   buildCards,
   countPartialIssues,
+  DEFAULT_PAGE_SIZE,
   deriveCoverage,
   deriveOptions,
   labelRightsStatus,
+  limitCards,
+  recordPreviewFailure,
   text,
   validateRegistry,
 } from "./gallery-core.js";
 import {
-  applyThemeAttribute,
-  readStoredTheme,
-  writeStoredTheme,
-} from "./theme.js";
+  bindThemeControl,
+  getThemeStorage,
+  initializeTheme,
+} from "./theme-ui.js";
 
-const REGISTRY_URL = "../data/registry-with-logos.json";
+const REGISTRY_URL = "../data/gallery.json";
 
 const state = {
   cards: [],
   filters: { search: "", kind: "all", country: "all", format: "all", rights: "all" },
   partialIssueCount: 0,
+  failedAssetIds: new Set(),
+  renderLimit: DEFAULT_PAGE_SIZE,
 };
 
 const elements = {
@@ -41,6 +46,7 @@ const elements = {
   emptyState: document.querySelector("#empty-state"),
   loadingState: document.querySelector("#loading-state"),
   logoGrid: document.querySelector("#logo-grid"),
+  loadMore: document.querySelector("#load-more"),
 };
 
 async function loadRegistry() {
@@ -57,7 +63,7 @@ function setHidden(element, hidden) {
 }
 
 function setControlsDisabled(disabled) {
-  for (const control of [elements.searchInput, elements.entityTypeFilter, elements.countryFilter, elements.formatFilter, elements.rightsFilter, elements.resetFilters]) {
+  for (const control of [elements.searchInput, elements.entityTypeFilter, elements.countryFilter, elements.formatFilter, elements.rightsFilter, elements.resetFilters, elements.loadMore]) {
     if (control) control.disabled = disabled;
   }
 }
@@ -149,7 +155,7 @@ function createPreview(card) {
   image.addEventListener("error", () => {
     if (image.isConnected) image.remove();
     if (!fallback.isConnected) preview.append(fallback);
-    state.partialIssueCount += 1;
+    if (recordPreviewFailure(state.failedAssetIds, card.assetId)) state.partialIssueCount += 1;
     renderPartialWarning();
   }, { once: true });
   preview.append(image);
@@ -219,28 +225,37 @@ function createCard(card) {
 }
 
 function renderCards(cards) {
+  const renderedCards = limitCards(cards, state.renderLimit);
   clearChildren(elements.logoGrid);
   if (cards.length === 0) {
     setHidden(elements.logoGrid, true);
     setHidden(elements.emptyState, false);
+    setHidden(elements.loadMore, true);
     return;
   }
   const fragment = document.createDocumentFragment();
-  for (const card of cards) fragment.append(createCard(card));
+  for (const card of renderedCards) fragment.append(createCard(card));
   elements.logoGrid.append(fragment);
   setHidden(elements.emptyState, true);
   setHidden(elements.logoGrid, false);
+  setHidden(elements.loadMore, renderedCards.length >= cards.length);
 }
 
 function updateView() {
   const visibleCards = applyFilters(state.cards, state.filters);
   renderCards(visibleCards);
-  setText(elements.resultStatus, `Showing ${formatCount(visibleCards.length)} of ${formatCount(state.cards.length)} logo assets`);
+  const renderedCount = Math.min(state.renderLimit, visibleCards.length);
+  setText(elements.resultStatus, `Showing ${formatCount(renderedCount)} of ${formatCount(visibleCards.length)} matching logo assets`);
   renderPartialWarning();
 }
 
 function resetFilters() {
+  if (searchTimer) {
+    window.clearTimeout(searchTimer);
+    searchTimer = null;
+  }
   state.filters = { search: "", kind: "all", country: "all", format: "all", rights: "all" };
+  state.renderLimit = DEFAULT_PAGE_SIZE;
   elements.searchInput.value = "";
   elements.entityTypeFilter.value = "all";
   elements.countryFilter.value = "all";
@@ -249,28 +264,12 @@ function resetFilters() {
   updateView();
 }
 
-function getThemeStorage() {
-  try {
-    return window.localStorage;
-  } catch {
-    return null;
-  }
+function loadMore() {
+  state.renderLimit += DEFAULT_PAGE_SIZE;
+  updateView();
 }
 
-function initializeTheme() {
-  const theme = readStoredTheme(getThemeStorage());
-  applyThemeAttribute(document.documentElement, theme);
-  if (elements.themeSelect) elements.themeSelect.value = theme;
-}
-
-function bindThemeControl() {
-  if (!elements.themeSelect) return;
-  elements.themeSelect.addEventListener("change", () => {
-    const theme = writeStoredTheme(getThemeStorage(), elements.themeSelect.value);
-    applyThemeAttribute(document.documentElement, theme);
-    elements.themeSelect.value = theme;
-  });
-}
+let searchTimer = null;
 
 function bindControls() {
   const updateFilters = () => {
@@ -281,13 +280,22 @@ function bindControls() {
       format: elements.formatFilter.value,
       rights: elements.rightsFilter.value,
     };
+    state.renderLimit = DEFAULT_PAGE_SIZE;
     updateView();
   };
-  elements.searchInput.addEventListener("input", updateFilters);
+  const queueSearchUpdate = () => {
+    if (searchTimer) window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(() => {
+      searchTimer = null;
+      updateFilters();
+    }, 120);
+  };
+  elements.searchInput.addEventListener("input", queueSearchUpdate);
   for (const select of [elements.entityTypeFilter, elements.countryFilter, elements.formatFilter, elements.rightsFilter]) {
     select.addEventListener("change", updateFilters);
   }
   elements.resetFilters.addEventListener("click", resetFilters);
+  elements.loadMore.addEventListener("click", loadMore);
   for (const resetButton of document.querySelectorAll("[data-reset-filters]")) resetButton.addEventListener("click", resetFilters);
 }
 
@@ -329,6 +337,8 @@ async function bootstrap() {
   try {
     const registry = await loadRegistry();
     state.cards = buildCards(registry);
+    state.failedAssetIds = new Set();
+    state.renderLimit = DEFAULT_PAGE_SIZE;
     state.partialIssueCount = countPartialIssues(state.cards);
     renderCoverage(deriveCoverage(registry, state.cards));
     const options = deriveOptions(state.cards);
@@ -344,7 +354,8 @@ async function bootstrap() {
   }
 }
 
-initializeTheme();
-bindThemeControl();
+const themeStorage = getThemeStorage(window);
+initializeTheme({ storage: themeStorage, documentElement: document.documentElement, themeSelect: elements.themeSelect });
+bindThemeControl({ storage: themeStorage, documentElement: document.documentElement, themeSelect: elements.themeSelect });
 bindControls();
 bootstrap();

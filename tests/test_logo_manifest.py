@@ -73,6 +73,24 @@ def _write_fixture_registry(tmp_path: Path, body: bytes = b"<svg />") -> Path:
     return registry_path
 
 
+def _write_empty_registry(tmp_path: Path) -> Path:
+    payload = {
+        "asset_root": "assets",
+        "institutions": [],
+        "brands": [],
+        "identifiers": [],
+        "aliases": [],
+        "rekey_events": [],
+        "relationships": [],
+        "assets": [],
+        "sources": [],
+        "source_runs": [],
+    }
+    registry_path = tmp_path / "empty-registry.json"
+    registry_path.write_text(json.dumps(payload), encoding="utf-8")
+    return registry_path
+
+
 def test_manifest_captures_asset_owner_source_rights_and_file_checksum(tmp_path: Path) -> None:
     registry_path = _write_fixture_registry(tmp_path)
 
@@ -113,6 +131,23 @@ def test_manifest_serialization_keeps_one_machine_checkable_entry_per_line(tmp_p
 
     assert json.loads(serialized) == manifest
     assert len(serialized.splitlines()) <= 20
+
+
+def test_manifest_serialization_handles_empty_assets(tmp_path: Path) -> None:
+    manifest = build_logo_manifest(_write_empty_registry(tmp_path))
+
+    serialized = serialize_logo_manifest(manifest)
+
+    assert json.loads(serialized) == manifest
+
+
+@pytest.mark.parametrize("manifest_json", ["[]", "null", '"not-an-object"'])
+def test_manifest_verification_rejects_non_object_json(tmp_path: Path, manifest_json: str) -> None:
+    manifest_path = tmp_path / "manifest.json"
+    manifest_path.write_text(manifest_json, encoding="utf-8")
+
+    with pytest.raises(LogoManifestError, match="manifest must be a JSON object"):
+        verify_logo_manifest(_write_empty_registry(tmp_path), manifest_path)
 
 
 def test_committed_manifest_matches_every_registry_asset() -> None:

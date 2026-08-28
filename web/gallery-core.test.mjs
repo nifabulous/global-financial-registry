@@ -7,6 +7,8 @@ import {
   countPartialIssues,
   deriveCoverage,
   labelRightsStatus,
+  limitCards,
+  recordPreviewFailure,
   validateRegistry,
 } from "./gallery-core.js";
 
@@ -88,6 +90,16 @@ test("buildCards resolves institutions, brands, and partial metadata safely", ()
   assert.equal(partial.sourcePublisher, "Official source");
 });
 
+test("buildCards uses deterministic code-point ordering instead of host locale", () => {
+  const registry = sampleRegistry();
+  registry.institutions[0].short_name = "Å Bank";
+  registry.brands[0].display_name = "Z Pay";
+
+  const cards = buildCards(registry).filter((card) => card.assetId !== "asset-partial");
+
+  assert.deepEqual(cards.map((card) => card.assetId), ["asset-brand", "asset-institution"]);
+});
+
 test("applyFilters supports search plus kind, country, format, and rights", () => {
   const cards = buildCards(sampleRegistry());
 
@@ -124,6 +136,32 @@ test("coverage and partial warnings account for missing owners and binaries", ()
     missingCount: 0,
   });
   assert.equal(countPartialIssues(cards), 1);
+});
+
+test("coverage uses the full registry count supplied by a gallery projection", () => {
+  const registry = sampleRegistry();
+  registry.coverage = { total_entities: 3023 };
+  const cards = buildCards(registry);
+
+  assert.equal(deriveCoverage(registry, cards).totalEntities, 3023);
+  assert.equal(deriveCoverage(registry, cards).missingCount, 3021);
+});
+
+test("recordPreviewFailure counts each asset only once across rerenders", () => {
+  const failedAssetIds = new Set();
+
+  assert.equal(recordPreviewFailure(failedAssetIds, "asset-broken"), true);
+  assert.equal(recordPreviewFailure(failedAssetIds, "asset-broken"), false);
+  assert.equal(recordPreviewFailure(failedAssetIds, "asset-other"), true);
+  assert.deepEqual([...failedAssetIds], ["asset-broken", "asset-other"]);
+});
+
+test("limitCards bounds the rendered page while preserving source order", () => {
+  const cards = Array.from({ length: 3 }, (_, index) => ({ assetId: `asset-${index}` }));
+
+  assert.deepEqual(limitCards(cards, 2), cards.slice(0, 2));
+  assert.deepEqual(limitCards(cards, 0), []);
+  assert.deepEqual(limitCards(cards, 10), cards);
 });
 
 test("rights status labels remain explicit for known and unknown values", () => {

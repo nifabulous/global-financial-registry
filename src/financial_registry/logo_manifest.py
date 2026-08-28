@@ -133,8 +133,9 @@ def serialize_logo_manifest(manifest: dict[str, Any]) -> str:
     lines = ["{"]
     summary = {key: value for key, value in manifest.items() if key != "assets"}
     summary_items = sorted(summary.items())
+    has_assets_key = "assets" in manifest
     for index, (key, value) in enumerate(summary_items):
-        comma = "," if index < len(summary_items) - 1 or assets else ""
+        comma = "," if index < len(summary_items) - 1 or has_assets_key else ""
         encoded = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
         lines.append(f"  {json.dumps(key, ensure_ascii=False)}: {encoded}{comma}")
     lines.append('  "assets": [')
@@ -154,6 +155,8 @@ def verify_logo_manifest(registry_path: Path, manifest_path: Path) -> dict[str, 
         actual = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (FileNotFoundError, OSError, json.JSONDecodeError) as exc:
         raise LogoManifestError(f"manifest is unreadable: {manifest_path}") from exc
+    if not isinstance(actual, dict):
+        raise LogoManifestError(f"manifest must be a JSON object: {manifest_path}")
     expected = build_logo_manifest(registry_path, registry_label=actual.get("registry_path"))
     if actual != expected:
         raise LogoManifestError("manifest does not match registry, assets, or linkage metadata")

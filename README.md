@@ -18,7 +18,7 @@ financial-registry --help
 ## Local logo gallery
 
 The repository includes a read-only browser gallery for the reviewed logo assets in
-`data/registry-with-logos.json`. It shows each committed asset, including multiple
+`data/gallery.json`, a generated projection of `data/registry-with-logos.json`. It shows each committed asset, including multiple
 variants, with its owner, format, provenance, and rights note. The registry contains
 thousands of entities but only a subset with logo assets; the gallery derives and
 reports the current counts and does not render thousands of empty cards.
@@ -37,6 +37,15 @@ python3 -m http.server 8000
 Open <http://localhost:8000/web/>.
 
 Use the Theme selector to follow your system preference or choose a persistent Light/Dark override.
+
+Regenerate and verify the lightweight gallery projection after changing the registry:
+
+```bash
+python scripts/build_gallery_data.py --write \
+  data/registry-with-logos.json data/gallery.json
+python scripts/build_gallery_data.py \
+  data/registry-with-logos.json data/gallery.json
+```
 
 ### Reviewable logo corpus manifest
 

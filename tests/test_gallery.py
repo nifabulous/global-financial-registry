@@ -4,11 +4,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "data" / "registry-with-logos.json"
+GALLERY_DATA_PATH = ROOT / "data" / "gallery.json"
 INDEX_PATH = ROOT / "web" / "index.html"
 APP_PATH = ROOT / "web" / "app.js"
 CORE_PATH = ROOT / "web" / "gallery-core.js"
 STYLES_PATH = ROOT / "web" / "styles.css"
 THEME_PATH = ROOT / "web" / "theme.js"
+THEME_UI_PATH = ROOT / "web" / "theme-ui.js"
 
 
 def load_registry() -> dict:
@@ -22,6 +24,8 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
     assert INDEX_PATH.is_file()
     assert STYLES_PATH.is_file()
     assert THEME_PATH.is_file()
+    assert THEME_UI_PATH.is_file()
+    assert GALLERY_DATA_PATH.is_file()
     assert '<script type="module" src="app.js"></script>' in index
     assert '<link rel="stylesheet" href="styles.css">' in index
     assert 'href="#gallery-content"' in index
@@ -33,6 +37,7 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
     assert 'id="format-filter"' in index
     assert 'id="rights-filter"' in index
     assert 'id="reset-filters"' in index
+    assert 'id="load-more"' in index
     assert 'id="theme-select"' in index
     assert 'value="system"' in index
     assert 'value="light"' in index
@@ -44,6 +49,8 @@ def test_gallery_files_and_accessibility_shell_exist() -> None:
     assert "@media (prefers-color-scheme: dark)" in styles
     assert "color-scheme: dark" in styles
     assert "--color-preview" in styles
+    assert "--dark-color-preview: #f0ede7;" in styles
+    assert styles.count("--color-preview: var(--dark-color-preview);") == 2
     assert ".visually-hidden" in styles
 
 
@@ -66,16 +73,28 @@ def test_gallery_script_uses_safe_dom_and_source_url_guards() -> None:
 
     assert APP_PATH.is_file()
     assert CORE_PATH.is_file()
-    assert "../data/registry-with-logos.json" in app
+    assert "../data/gallery.json" in app
     assert "textContent" in app
     assert "innerHTML" not in app
     assert re.search(r"new URL\(", core)
     assert "noopener" in app
     assert "noopener noreferrer" in app
-    assert 'from "./theme.js"' in app
+    assert 'from "./theme-ui.js"' in app
+    assert "recordPreviewFailure" in app
+    assert "setTimeout" in app
+    assert "limitCards" in app
     assert "theme-select" in app
     assert "https:" in core
     assert "http:" in core
+
+
+def test_gallery_bootstrap_and_theme_module_share_storage_key() -> None:
+    index = INDEX_PATH.read_text(encoding="utf-8")
+    theme = THEME_PATH.read_text(encoding="utf-8")
+
+    match = re.search(r'THEME_STORAGE_KEY\s*=\s*"([^"]+)"', theme)
+    assert match
+    assert f'localStorage.getItem("{match.group(1)}")' in index
 
 
 def test_gallery_copy_explains_scope_and_rights() -> None:

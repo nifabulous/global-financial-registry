@@ -1,4 +1,5 @@
 export const REQUIRED_ARRAYS = ["institutions", "brands", "assets", "sources"];
+export const DEFAULT_PAGE_SIZE = 100;
 
 export const rightsLabels = {
   nominative_use: "Nominative use",
@@ -87,7 +88,7 @@ export function buildCards(registry) {
     const kind = owner?.kind || "unknown";
     const legalName = kind === "institution" && text(entity.legal_name) && entity.legal_name !== entity.short_name ? entity.legal_name : "";
     const source = sources.get(text(asset.source_id));
-    return {
+    const card = {
       asset,
       assetId: text(asset.id, "unknown-asset"),
       ownerId,
@@ -104,15 +105,30 @@ export function buildCards(registry) {
       format: text(asset.format, "unknown").toLowerCase(),
       variant: text(asset.variant, "primary"),
     };
+    card.searchText = [card.name, card.legalName, ...card.countries].join(" ").toLowerCase();
+    return card;
   }).sort((left, right) => {
-    const leftKey = [left.name, left.variant, left.format, left.assetId].map((value) => value.toLocaleLowerCase()).join("\u0000");
-    const rightKey = [right.name, right.variant, right.format, right.assetId].map((value) => value.toLocaleLowerCase()).join("\u0000");
-    return leftKey.localeCompare(rightKey);
+    const leftKey = [left.name, left.variant, left.format, left.assetId].map((value) => value.toLowerCase()).join("\u0000");
+    const rightKey = [right.name, right.variant, right.format, right.assetId].map((value) => value.toLowerCase()).join("\u0000");
+    return leftKey < rightKey ? -1 : leftKey > rightKey ? 1 : 0;
   });
 }
 
+export function limitCards(cards, limit = DEFAULT_PAGE_SIZE) {
+  const normalizedLimit = Number.isFinite(limit) ? Math.max(0, Math.floor(limit)) : DEFAULT_PAGE_SIZE;
+  return cards.slice(0, normalizedLimit);
+}
+
+export function recordPreviewFailure(failedAssetIds, assetId) {
+  if (failedAssetIds.has(assetId)) return false;
+  failedAssetIds.add(assetId);
+  return true;
+}
+
 export function deriveCoverage(registry, cards) {
-  const totalEntities = registry.institutions.length + registry.brands.length;
+  const totalEntities = Number.isInteger(registry.coverage?.total_entities)
+    ? registry.coverage.total_entities
+    : registry.institutions.length + registry.brands.length;
   const knownOwners = new Set(cards.filter((card) => card.ownerKnown).map((card) => card.ownerId));
   return {
     totalEntities,
@@ -134,9 +150,9 @@ export function labelRightsStatus(value) {
 }
 
 export function applyFilters(cards, filters) {
-  const query = filters.search.trim().toLocaleLowerCase();
+  const query = filters.search.trim().toLowerCase();
   return cards.filter((card) => {
-    const searchText = [card.name, card.legalName, ...card.countries].join(" ").toLocaleLowerCase();
+    const searchText = card.searchText || [card.name, card.legalName, ...card.countries].join(" ").toLowerCase();
     return (!query || searchText.includes(query))
       && (filters.kind === "all" || card.kind === filters.kind)
       && (filters.country === "all" || card.countries.includes(filters.country))

@@ -27,4 +27,6 @@ jobs:
       - run: python -m pytest --cov=financial_registry --cov-fail-under=85 -q
       - run: node --test web/gallery-core.test.mjs
       - run: node --test web/theme.test.mjs
+      - run: node --test web/theme-ui.test.mjs
       - run: python scripts/check_logo_manifest.py data/registry-with-logos.json data/logo-manifest.json
+      - run: python scripts/build_gallery_data.py data/registry-with-logos.json data/gallery.json
