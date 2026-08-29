@@ -1,6 +1,6 @@
 from pathlib import Path
 
-LOOPKEEPER_RELEASE_SHA = "f1e92ab216382a3a000d95d33da6362008b706c0"
+LOOPKEEPER_RELEASE_SHA = "56d7da92763d4013a017fd0ca0f8f8c9f85f9a77"
 
 WORKFLOW = (
     Path(__file__).parents[1] / ".github" / "workflows" / "loopkeeper-pr-review.yml"
