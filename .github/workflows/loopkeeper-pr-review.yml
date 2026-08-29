@@ -29,12 +29,12 @@ jobs:
         (github.event.workflow_run.event == 'pull_request' &&
          github.event.workflow_run.pull_requests[0].number != null)
       }}
-    uses: nifabulous/loopkeeper/.github/workflows/pr-review-posting.yml@f1e92ab216382a3a000d95d33da6362008b706c0
+    uses: nifabulous/loopkeeper/.github/workflows/pr-review-posting.yml@56d7da92763d4013a017fd0ca0f8f8c9f85f9a77
     with:
       consumer_repo: ${{ github.repository }}
       loopkeeper_repo: nifabulous/loopkeeper
       consumer_trusted_sha: ""
-      loopkeeper_sha: f1e92ab216382a3a000d95d33da6362008b706c0
+      loopkeeper_sha: 56d7da92763d4013a017fd0ca0f8f8c9f85f9a77
       ci_workflow_name: Global Registry Core
       ci_workflow_file: registry-core.yml
       expected_head_sha: ${{ github.event.workflow_run.head_sha || '' }}
